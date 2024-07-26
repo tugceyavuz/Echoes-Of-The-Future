@@ -1,0 +1,777 @@
+fileFormatVersion: 2
+guid: b687aee4a72f2bbcd8fb53c9c4a7620c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 62a9f0aa5b59740cfbadc7e5f9823bb0, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+    swizzle: 50462976
+    isReadable: 0
+    streamingMipmaps: 0
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    ignoreMipmapLimit: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    cookieMode: 0
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  previousAsepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  asepriteImporterSettings:
+    fileImportMode: 1
+    importHiddenLayers: 0
+    layerImportMode: 1
+    defaultPivotSpace: 0
+    defaultPivotAlignment: 7
+    customPivotPosition: {x: 0.5, y: 0.5}
+    mosaicPadding: 4
+    spritePadding: 0
+    generateModelPrefab: 1
+    generateAnimationClips: 1
+    addSortingGroup: 1
+    addShadowCasters: 0
+  importFileNodeState: 1
+  platformSettingsDirtyTick: 0
+  textureAssetName: 
+  singleSpriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 0, y: 0}
+  animatedSpriteImportData:
+  - name: Paper Spritesheet_Frame_0
+    originalName: 
+    pivot: {x: 0.5094862, y: -0.014821823}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 2530
+      height: 3171
+    spriteID: 1a05efac91cccac2d95e45502cf374d6
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4}
+  - name: Paper Spritesheet_Frame_1
+    originalName: 
+    pivot: {x: 0.5094862, y: -0.014821823}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2542
+      y: 4
+      width: 2530
+      height: 3171
+    spriteID: 39114055e23d28f1e85a85db80425b9e
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2542, y: 4}
+  - name: Paper Spritesheet_Frame_2
+    originalName: 
+    pivot: {x: 0.68980473, y: -0.04633782}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5080
+      y: 4
+      width: 1844
+      height: 1338
+    spriteID: 428384c90239a559096205de6dac58da
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5080, y: 4}
+  - name: Paper Spritesheet_Frame_3
+    originalName: 
+    pivot: {x: 0.6689765, y: -2.3233533}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3930
+      y: 3890
+      width: 1876
+      height: 668
+    spriteID: a5e41d073f013513fa0df5d58627f0ed
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 3930, y: 3890}
+  - name: Paper Spritesheet_Frame_4
+    originalName: 
+    pivot: {x: 3.2291667, y: -4.3076925}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7767
+      y: 3890
+      width: 384
+      height: 416
+    spriteID: d6456542c9c0b2d8eb9645e2e62cd6b8
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7767, y: 3890}
+  - name: Paper Spritesheet_Frame_5
+    originalName: 
+    pivot: {x: 4.6514525, y: -4.535}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7525
+      y: 1350
+      width: 241
+      height: 400
+    spriteID: 25a1e0d138ab498c6b122054a85e990a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7525, y: 1350}
+  - name: Paper Spritesheet_Frame_6
+    originalName: 
+    pivot: {x: 0.5088223, y: -3.0833335}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5080
+      y: 1350
+      width: 2437
+      height: 768
+    spriteID: 147a82dc5cc5500a2a4dc54f61ac68b9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5080, y: 1350}
+  - name: Paper Spritesheet_Frame_7
+    originalName: 
+    pivot: {x: 0.5110768, y: -3.1762352}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3890
+      width: 1941
+      height: 749
+    spriteID: 8846c131a51f579929fde9b8d0265e62
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3890}
+  - name: Paper Spritesheet_Frame_8
+    originalName: 
+    pivot: {x: 0.78488374, y: -4.7170925}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6929
+      y: 3183
+      width: 1204
+      height: 509
+    spriteID: d7a7d26d3ceb4e0e28b8ffd9a3767009
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6929, y: 3183}
+  - name: Paper Spritesheet_Frame_9
+    originalName: 
+    pivot: {x: 0.513308, y: -3.3301108}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5080
+      y: 2126
+      width: 2367
+      height: 724
+    spriteID: 5d9144d2818a398e39d815984b514c22
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5080, y: 2126}
+  - name: Paper Spritesheet_Frame_10
+    originalName: 
+    pivot: {x: 0.47826084, y: -3.5524373}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4713
+      y: 3183
+      width: 2208
+      height: 677
+    spriteID: 88a234f201495ea5a83b9df50b462bd5
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4713, y: 3183}
+  - name: Paper Spritesheet_Frame_11
+    originalName: 
+    pivot: {x: 0.39704847, y: -4.8162875}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4255
+      y: 4647
+      width: 1423
+      height: 528
+    spriteID: 4e2139b629e40ad1f8de17f853f88214
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4255, y: 4647}
+  - name: Paper Spritesheet_Frame_12
+    originalName: 
+    pivot: {x: -0.47526047, y: -37.600002}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 6929
+      y: 3700
+      width: 768
+      height: 80
+    spriteID: 6c1bfd2b1dda41da9a0390daad35d58a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 6929, y: 3700}
+  - name: Paper Spritesheet_Frame_13
+    originalName: 
+    pivot: {x: 0.5195363, y: -3.4577968}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3183
+      width: 2329
+      height: 699
+    spriteID: 6969347ea85d13fedba3f5b0f4b7ed94
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 3183}
+  - name: Paper Spritesheet_Frame_14
+    originalName: 
+    pivot: {x: 3.0240965, y: -68.11364}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7525
+      y: 1758
+      width: 83
+      height: 44
+    spriteID: 4c3a2d2b19dae23db99e0512d3aeeeb9
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7525, y: 1758}
+  - name: Paper Spritesheet_Frame_15
+    originalName: 
+    pivot: {x: 0.47739965, y: -3.4826086}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1953
+      y: 3890
+      width: 1969
+      height: 690
+    spriteID: 706b50cb336c1ea158eed5cb1b44e005
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1953, y: 3890}
+  - name: Paper Spritesheet_Frame_16
+    originalName: 
+    pivot: {x: 0.50972927, y: -3.5285504}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2341
+      y: 3183
+      width: 2364
+      height: 683
+    spriteID: 9357a21c173eee5df82109680a5e994a
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 2341, y: 3183}
+  - name: Paper Spritesheet_Frame_17
+    originalName: 
+    pivot: {x: 0.5023965, y: -5.705376}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 1952
+      y: 4647
+      width: 2295
+      height: 465
+    spriteID: 7bfc8863c775fd4928f29d29c9c6609f
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 1952, y: 4647}
+  - name: Paper Spritesheet_Frame_18
+    originalName: 
+    pivot: {x: 11.833334, y: -67.85714}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7525
+      y: 1810
+      width: 42
+      height: 42
+    spriteID: c71f38987833987eb85b77cb55c4fd67
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7525, y: 1810}
+  - name: Paper Spritesheet_Frame_19
+    originalName: 
+    pivot: {x: 16.366667, y: -95.200005}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 7525
+      y: 1860
+      width: 30
+      height: 30
+    spriteID: 3eb5140e7695afe4e94622f4bc43313c
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 7525, y: 1860}
+  - name: Paper Spritesheet_Frame_20
+    originalName: 
+    pivot: {x: 0.37172237, y: -4.1509123}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 5814
+      y: 3890
+      width: 1945
+      height: 603
+    spriteID: 901f7692324aac5b0902099e504ef73b
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 5814, y: 3890}
+  - name: Paper Spritesheet_Frame_21
+    originalName: 
+    pivot: {x: 0.37216493, y: -4.20302}
+    alignment: 9
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4647
+      width: 1940
+      height: 596
+    spriteID: ad4a685a5f7ed8544bbd17d231d42616
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    uvTransform: {x: 4, y: 4647}
+  spriteSheetImportData: []
+  asepriteLayers:
+  - layerIndex: 0
+    guid: -1164956784
+    name: Paper Spritesheet
+    layerFlags: 0
+    layerType: 0
+    blendMode: 0
+    cells:
+    - name: Paper Spritesheet_Frame_0
+      frameIndex: 0
+      additiveSortOrder: 0
+      cellRect:
+        x: 47
+        y: 47
+        width: 2530
+        height: 3171
+      spriteId: 1a05efac91cccac2d95e45502cf374d6
+    - name: Paper Spritesheet_Frame_1
+      frameIndex: 1
+      additiveSortOrder: 0
+      cellRect:
+        x: 47
+        y: 47
+        width: 2530
+        height: 3171
+      spriteId: 39114055e23d28f1e85a85db80425b9e
+    - name: Paper Spritesheet_Frame_2
+      frameIndex: 2
+      additiveSortOrder: 0
+      cellRect:
+        x: 64
+        y: 62
+        width: 1844
+        height: 1338
+      spriteId: 428384c90239a559096205de6dac58da
+    - name: Paper Spritesheet_Frame_3
+      frameIndex: 3
+      additiveSortOrder: 0
+      cellRect:
+        x: 81
+        y: 1552
+        width: 1876
+        height: 668
+      spriteId: a5e41d073f013513fa0df5d58627f0ed
+    - name: Paper Spritesheet_Frame_4
+      frameIndex: 4
+      additiveSortOrder: 0
+      cellRect:
+        x: 96
+        y: 1792
+        width: 384
+        height: 416
+      spriteId: d6456542c9c0b2d8eb9645e2e62cd6b8
+    - name: Paper Spritesheet_Frame_5
+      frameIndex: 5
+      additiveSortOrder: 0
+      cellRect:
+        x: 215
+        y: 1814
+        width: 241
+        height: 400
+      spriteId: 25a1e0d138ab498c6b122054a85e990a
+    - name: Paper Spritesheet_Frame_6
+      frameIndex: 6
+      additiveSortOrder: 0
+      cellRect:
+        x: 96
+        y: 2368
+        width: 2437
+        height: 768
+      spriteId: 147a82dc5cc5500a2a4dc54f61ac68b9
+    - name: Paper Spritesheet_Frame_7
+      frameIndex: 7
+      additiveSortOrder: 0
+      cellRect:
+        x: 344
+        y: 2379
+        width: 1941
+        height: 749
+      spriteId: 8846c131a51f579929fde9b8d0265e62
+    - name: Paper Spritesheet_Frame_8
+      frameIndex: 8
+      additiveSortOrder: 0
+      cellRect:
+        x: 391
+        y: 2401
+        width: 1204
+        height: 509
+      spriteId: d7a7d26d3ceb4e0e28b8ffd9a3767009
+    - name: Paper Spritesheet_Frame_9
+      frameIndex: 9
+      additiveSortOrder: 0
+      cellRect:
+        x: 121
+        y: 2411
+        width: 2367
+        height: 724
+      spriteId: 5d9144d2818a398e39d815984b514c22
+    - name: Paper Spritesheet_Frame_10
+      frameIndex: 10
+      additiveSortOrder: 0
+      cellRect:
+        x: 280
+        y: 2405
+        width: 2208
+        height: 677
+      spriteId: 88a234f201495ea5a83b9df50b462bd5
+    - name: Paper Spritesheet_Frame_11
+      frameIndex: 11
+      additiveSortOrder: 0
+      cellRect:
+        x: 771
+        y: 2543
+        width: 1423
+        height: 528
+      spriteId: 4e2139b629e40ad1f8de17f853f88214
+    - name: Paper Spritesheet_Frame_12
+      frameIndex: 12
+      additiveSortOrder: 0
+      cellRect:
+        x: 1701
+        y: 3008
+        width: 768
+        height: 80
+      spriteId: 6c1bfd2b1dda41da9a0390daad35d58a
+    - name: Paper Spritesheet_Frame_13
+      frameIndex: 13
+      additiveSortOrder: 0
+      cellRect:
+        x: 126
+        y: 2417
+        width: 2329
+        height: 699
+      spriteId: 6969347ea85d13fedba3f5b0f4b7ed94
+    - name: Paper Spritesheet_Frame_14
+      frameIndex: 14
+      additiveSortOrder: 0
+      cellRect:
+        x: 1085
+        y: 2997
+        width: 83
+        height: 44
+      spriteId: 4c3a2d2b19dae23db99e0512d3aeeeb9
+    - name: Paper Spritesheet_Frame_15
+      frameIndex: 15
+      additiveSortOrder: 0
+      cellRect:
+        x: 396
+        y: 2403
+        width: 1969
+        height: 690
+      spriteId: 706b50cb336c1ea158eed5cb1b44e005
+    - name: Paper Spritesheet_Frame_16
+      frameIndex: 16
+      additiveSortOrder: 0
+      cellRect:
+        x: 131
+        y: 2410
+        width: 2364
+        height: 683
+      spriteId: 9357a21c173eee5df82109680a5e994a
+    - name: Paper Spritesheet_Frame_17
+      frameIndex: 17
+      additiveSortOrder: 0
+      cellRect:
+        x: 183
+        y: 2653
+        width: 2295
+        height: 465
+      spriteId: 7bfc8863c775fd4928f29d29c9c6609f
+    - name: Paper Spritesheet_Frame_18
+      frameIndex: 18
+      additiveSortOrder: 0
+      cellRect:
+        x: 839
+        y: 2850
+        width: 42
+        height: 42
+      spriteId: c71f38987833987eb85b77cb55c4fd67
+    - name: Paper Spritesheet_Frame_19
+      frameIndex: 19
+      additiveSortOrder: 0
+      cellRect:
+        x: 845
+        y: 2856
+        width: 30
+        height: 30
+      spriteId: 3eb5140e7695afe4e94622f4bc43313c
+    - name: Paper Spritesheet_Frame_20
+      frameIndex: 20
+      additiveSortOrder: 0
+      cellRect:
+        x: 613
+        y: 2503
+        width: 1945
+        height: 603
+      spriteId: 901f7692324aac5b0902099e504ef73b
+    - name: Paper Spritesheet_Frame_21
+      frameIndex: 21
+      additiveSortOrder: 0
+      cellRect:
+        x: 614
+        y: 2505
+        width: 1940
+        height: 596
+      spriteId: ad4a685a5f7ed8544bbd17d231d42616
+    linkedCells: []
+    parentIndex: -1
+  platformSettings: []
+  generatePhysicsShape: 0
+  secondarySpriteTextures: []
+  spritePackingTag: 
+  canvasSize: {x: 2672, y: 3280}
