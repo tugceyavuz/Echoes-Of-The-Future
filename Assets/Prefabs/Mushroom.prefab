@@ -212,5 +212,5 @@ MonoBehaviour:
   itemName: Mushroom
   quantity: 1
   sprite: {fileID: -1225368479, guid: 3fd9b378663dd05eea4512273b3d8cc5, type: 3}
-  itemDescription: Mushroom that looks almost edable, considering the enviroment
+  itemDescription: Mushroom that looks almost edible, considering the environment
     that is. (Restores 5 hunger points)

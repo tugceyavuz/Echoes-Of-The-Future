@@ -65,6 +65,17 @@ public class pickUpSrc : MonoBehaviour
 
 
     void PickUpItem() { 
+
+        // For full inventory
+        bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+        if (isAdded)
+        {
+            Destroy(gameObject);
+        }else
+        {
+            return;
+        }
+
         // For mini inventory
         for (int i = 0; i < inventory.slots.Length; i++)
         {
@@ -76,11 +87,5 @@ public class pickUpSrc : MonoBehaviour
                 break;
             }
         }
-
-        // For full inventory
-        inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-        Destroy(gameObject);
-
-        
     }
 }
