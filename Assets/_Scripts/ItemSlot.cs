@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using System;
+using System.Diagnostics.Tracing;
 
 public class ItemSlot : MonoBehaviour, IPointerClickHandler
 {
@@ -12,48 +14,134 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public Sprite itemSprite;
     public bool isFull;
     public string itemDescription;
+    public const int maxQuantity = 5;  // Maximum items per slot
 
-
+    public InventoryManager inventoryManager;
 
     [SerializeField]
     private TMP_Text quantityText;
     [SerializeField]
     private Image itemImage;
-
+    public Sprite defaultImage;
+    public string hexColorCode = "#C9A76B";
 
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionNameText;
     public TMP_Text itemDescriptionText;
 
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    {
+        if (isFull && this.itemName == itemName)
+        {
+            IncreaseQuantity(quantity);
+        }
+        else
+        {
+            this.itemName = itemName;
+            this.itemSprite = itemSprite;
+            this.itemDescription = itemDescription;
+            itemImage.sprite = itemSprite;
+            itemImage.enabled = true;
+            this.quantity = quantity;
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = true;
+            isFull = true;
+        }
+    }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription){
+    public void IncreaseQuantity(int quantity)
+    {
+        int newQuantity = this.quantity + quantity;
+        if (newQuantity > maxQuantity)
+        {
+            this.quantity = maxQuantity;
+        }
+        else
+        {
+            this.quantity = newQuantity;
+        }
+        quantityText.text = this.quantity.ToString();
+    }
 
-        this.itemName = itemName;
-        this.itemSprite = itemSprite;
-        this.itemDescription = itemDescription;
-        itemImage.sprite = itemSprite;
-        itemImage.enabled = true;   
-        quantityText.text = quantity.ToString();
-        quantityText.enabled = true;
-        isFull = true;  
+    public int RemainingCapacity()
+    {
+        return maxQuantity - this.quantity;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Left)
         {
-           OnLeftClick();
+            OnLeftClick();
         }
-        
         if (eventData.button == PointerEventData.InputButton.Right)
         {
-            
+            OnRightClick();
         }
+
     }
 
-    void OnLeftClick(){
+    private void OnRightClick()
+    {
+        bool usable = inventoryManager.UseItem(itemName);
+        
+        if(usable){    
+            this.quantity -= 1;
+            quantityText.text = this.quantity.ToString();
+            if (this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+        }
+
+    }
+
+    private void EmptySlot()
+    {
+        Color color = HexToColor(hexColorCode);
+
+        quantityText.enabled = false;
+        itemImage.sprite = defaultImage;
+        itemImage.color = color;
+        itemDescriptionNameText.text = "";
+        itemDescriptionText.text = "";
+        itemDescriptionImage.sprite = defaultImage;
+        isFull = false;
+    }
+
+    void OnLeftClick()
+    {
         itemDescriptionNameText.text = itemName;
         itemDescriptionText.text = itemDescription;
         itemDescriptionImage.sprite = itemSprite;
+    }
+
+    public static Color HexToColor(string hex)
+    {
+        // Remove the hash at the beginning if it's there
+        hex = hex.Replace("#", "");
+
+        // If the hex code is 6 characters, convert it to RGBA
+        if (hex.Length == 6)
+        {
+            byte r = byte.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+            byte g = byte.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+            byte b = byte.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+            return new Color32(r, g, b, 255);
+        }
+        // If the hex code is 8 characters, include alpha
+        else if (hex.Length == 8)
+        {
+            byte r = byte.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+            byte g = byte.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+            byte b = byte.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+            byte a = byte.Parse(hex.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+            return new Color32(r, g, b, a);
+        }
+        else
+        {
+            Debug.LogError("Invalid hex color code.");
+            return Color.white; // Default to white if invalid code
+        }
     }
 }

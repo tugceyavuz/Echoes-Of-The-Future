@@ -96,9 +96,11 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   isFull: 0
   itemDescription: 
+  inventoryManager: {fileID: 2100871403887681147, guid: abe89cd3d35279cdcb414b0a6ed2ee14, type: 3}
   quantityText: {fileID: 8884088364756937115}
   itemImage: {fileID: 7770993588611511375}
-  maxNumItem: 5
+  defaultImage: {fileID: 21300000, guid: 69bf9016107b064c1a012ae4f5e23a8b, type: 3}
+  hexColorCode: '#C9A76B'
   itemDescriptionImage: {fileID: 0}
   itemDescriptionNameText: {fileID: 0}
   itemDescriptionText: {fileID: 0}

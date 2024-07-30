@@ -7,11 +7,13 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
     public GameObject JournalUI;
-     public GameObject BGBlur;
+    public GameObject BGBlur;
     public TextMeshProUGUI Title;
     public TextMeshProUGUI inventoryFullText; // Text element to show "Inventory full" message
     public bool menuActivated;
     public ItemSlot[] itemSlot;
+
+    public ItemSO[] itemSOs;
 
     // Start is called before the first frame update
     void Start()
@@ -46,31 +48,64 @@ public class InventoryManager : MonoBehaviour
         }
     }
 
+    public bool UseItem(string itemName){
+        for (int i = 0; i < itemSOs.Length; i++)
+        {
+            if (itemSOs[i].itemName == itemName)
+            {
+                bool usable = itemSOs[i].UseItem();
+                return usable;
+            }
+        }
+        return false;
+    }
+
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
-        bool itemAdded = false;
+        // Try to stack items in existing slots
         for (int i = 0; i < itemSlot.Length; i++)
         {
-            if (itemSlot[i].isFull == false)
+            if (itemSlot[i].isFull && itemSlot[i].itemName == itemName && itemSlot[i].quantity < ItemSlot.maxQuantity)
             {
-                itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
-                itemAdded = true;
-                break;
+                int remainingCapacity = itemSlot[i].RemainingCapacity();
+                if (quantity <= remainingCapacity)
+                {
+                    itemSlot[i].IncreaseQuantity(quantity);
+                    return true;
+                }
+                else
+                {
+                    itemSlot[i].IncreaseQuantity(remainingCapacity);
+                    quantity -= remainingCapacity;
+                }
             }
         }
 
-        if (!itemAdded)
+        // Add items to new slots
+        for (int i = 0; i < itemSlot.Length; i++)
         {
-            // Show "Inventory full" message if no slots are available
-            if (inventoryFullText != null)
+            if (!itemSlot[i].isFull)
             {
-                inventoryFullText.text = "Inventory full";
-                StartCoroutine(HideInventoryFullMessage());
+                if (quantity > ItemSlot.maxQuantity)
+                {
+                    itemSlot[i].AddItem(itemName, ItemSlot.maxQuantity, itemSprite, itemDescription);
+                    quantity -= ItemSlot.maxQuantity;
+                }
+                else
+                {
+                    itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+                    return true;
+                }
             }
-            return false;
         }
 
-        return true;
+        // Show "Inventory full" message if no slots are available
+        if (inventoryFullText != null)
+        {
+            inventoryFullText.text = "Inventory full";
+            StartCoroutine(HideInventoryFullMessage());
+        }
+        return false;
     }
 
     private IEnumerator HideInventoryFullMessage()
