@@ -29,8 +29,8 @@ public class PlayerStatsManager : MonoBehaviour
     private void Start()
     {
         // Initialize stats
-        currentHealth = 10;
-        currentHunger = maxHunger;
+        currentHealth = maxHealth;
+        currentHunger = 10;
         currentThirst = maxThirst;
 
         // Update UI
@@ -67,7 +67,7 @@ public class PlayerStatsManager : MonoBehaviour
         // Check if hunger is at zero and apply health penalty
         if (currentHunger <= 0)
         {
-            ChangeHealth(-5); // Example penalty for starvation
+            ChangeHealth(-5); //  penalty for starvation
         }
     }
 
@@ -80,7 +80,7 @@ public class PlayerStatsManager : MonoBehaviour
         // Check if thirst is at zero and apply health penalty
         if (currentThirst <= 0)
         {
-            ChangeHealth(-5); // Example penalty for dehydration
+            ChangeHealth(-5); //  penalty for dehydration
         }
     }
 

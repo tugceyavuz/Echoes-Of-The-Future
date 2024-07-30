@@ -77,7 +77,7 @@ public class pickUpSrc : MonoBehaviour
         }
 
         // For mini inventory
-        for (int i = 0; i < inventory.slots.Length; i++)
+        /*for (int i = 0; i < inventory.slots.Length; i++)
         {
             if (inventory.isFull[i] == false)
             {
@@ -86,6 +86,6 @@ public class pickUpSrc : MonoBehaviour
                 pickupText.text = "";
                 break;
             }
-        }
+        }*/
     }
 }

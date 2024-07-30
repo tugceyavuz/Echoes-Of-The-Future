@@ -2753,6 +2753,11 @@ MonoBehaviour:
   itemSOs:
   - {fileID: 11400000, guid: eb97f78a1a46f20888459be4718c6e27, type: 2}
   - {fileID: 11400000, guid: 58a963d7e0db053e088002f4e940e17d, type: 2}
+  - {fileID: 11400000, guid: 0743b54f6ad8cdcf8b1a46aac2ee371f, type: 2}
+  - {fileID: 11400000, guid: c163a5c081b2c0f719f43a5a6eded79b, type: 2}
+  - {fileID: 11400000, guid: 226fc4d19803f4590b28acb42b38847c, type: 2}
+  - {fileID: 11400000, guid: 32c87462423ef269f9bbc85d29c72cd9, type: 2}
+  - {fileID: 11400000, guid: 19e8c54e7740148a686f5c76b269b9bb, type: 2}
 --- !u!114 &6835824063845155699
 MonoBehaviour:
   m_ObjectHideFlags: 0

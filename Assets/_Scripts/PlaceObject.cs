@@ -13,6 +13,8 @@ public class PlaceObject : MonoBehaviour
 
     public TextMeshProUGUI pickupText;
 
+    private Vector3 placementOffset = new Vector3(0, -3, 0);
+
     void Start()
     {
         pickupText.text = "";
@@ -54,8 +56,9 @@ public class PlaceObject : MonoBehaviour
     {
         if (playerTransform != null)
         {
+            Vector3 placementPosition = playerTransform.position + placementOffset;
             // Instantiate the object at the player's position with the same rotation
-            Instantiate(objectToPlace, playerTransform.position, playerTransform.rotation);
+            Instantiate(objectToPlace, placementPosition, playerTransform.rotation);
             pickupText.text = "";
             Destroy(gameObject);
         }

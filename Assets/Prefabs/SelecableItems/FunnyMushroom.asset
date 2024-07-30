@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 721808ce11ed72f5ab6a6ba5902c9070, type: 3}
   m_Name: FunnyMushroom
   m_EditorClassIdentifier: 
-  itemName: FunnyMushroom
+  itemName: Funny Mushroom
   amountToChangeStat: -5
   statToChange: 1
