@@ -5052,34 +5052,6 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
---- !u!1 &1294140541 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5248622562572150467, guid: f01017416542e5bf389d9cd5815813e3, type: 3}
-  m_PrefabInstance: {fileID: 7948328347326433785}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1294140549
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294140541}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612c502fe871af8b98e0080fcea20826, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  maxHunger: 100
-  maxThirst: 100
-  currentHealth: 0
-  currentHunger: 0
-  currentThirst: 0
-  healthText: {fileID: 0}
-  hungerText: {fileID: 0}
-  thirstText: {fileID: 0}
-  hungerDecreaseInterval: 10
-  thirstDecreaseInterval: 5
 --- !u!1001 &1318118694
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11848,22 +11820,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6188293974325555175, guid: 1f1c3818972d9ebd5a07c7998a920b39, type: 3}
-      propertyPath: sprite
-      value: 
-      objectReference: {fileID: -1225368479, guid: 3fd9b378663dd05eea4512273b3d8cc5, type: 3}
-    - target: {fileID: 6188293974325555175, guid: 1f1c3818972d9ebd5a07c7998a920b39, type: 3}
-      propertyPath: itemName
-      value: Mushroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 6188293974325555175, guid: 1f1c3818972d9ebd5a07c7998a920b39, type: 3}
-      propertyPath: quantity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6188293974325555175, guid: 1f1c3818972d9ebd5a07c7998a920b39, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6188293974325555175, guid: 1f1c3818972d9ebd5a07c7998a920b39, type: 3}
       propertyPath: pickupText
       value: 
       objectReference: {fileID: 992223534}
@@ -12226,10 +12182,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3082638535727717357, guid: 698afc041156159e78ac2bf9f5ccb943, type: 3}
-      propertyPath: itemName
-      value: Funny Mushroom
-      objectReference: {fileID: 0}
-    - target: {fileID: 3082638535727717357, guid: 698afc041156159e78ac2bf9f5ccb943, type: 3}
       propertyPath: pickupText
       value: 
       objectReference: {fileID: 992223534}
@@ -12448,14 +12400,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2592077124028055038, guid: f01017416542e5bf389d9cd5815813e3, type: 3}
-      propertyPath: m_Size.y
-      value: 4.479391
-      objectReference: {fileID: 0}
-    - target: {fileID: 2592077124028055038, guid: f01017416542e5bf389d9cd5815813e3, type: 3}
-      propertyPath: m_Offset.y
-      value: -1.900733
-      objectReference: {fileID: 0}
     - target: {fileID: 5248622562572150467, guid: f01017416542e5bf389d9cd5815813e3, type: 3}
       propertyPath: m_Name
       value: Player
@@ -12479,10 +12423,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5248622562572150467, guid: f01017416542e5bf389d9cd5815813e3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1294140549}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f01017416542e5bf389d9cd5815813e3, type: 3}
 --- !u!1001 &8308364888706674492
 PrefabInstance:

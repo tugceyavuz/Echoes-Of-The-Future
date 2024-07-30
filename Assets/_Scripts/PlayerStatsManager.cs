@@ -30,7 +30,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         // Initialize stats
         currentHealth = maxHealth;
-        currentHunger = 10;
+        currentHunger = maxHunger;
         currentThirst = maxThirst;
 
         // Update UI

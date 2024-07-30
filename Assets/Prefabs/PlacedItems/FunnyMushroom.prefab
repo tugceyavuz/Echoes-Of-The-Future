@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf83f8cae966413b9be9cb4c8691acb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: {fileID: 6531510983725317952, guid: fa1ae2f3ef586bc319ea0cbb700a6fdd, type: 3}
+  pickupText: {fileID: 0}
   itemButton: {fileID: 4311519071369597462, guid: a2faa4becc4f5c63d863c1ab62ebba24, type: 3}
   itemName: Funny Mushroom
   quantity: 1

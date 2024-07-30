@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 8447836522125497189}
   - component: {fileID: 2874278826658491243}
   - component: {fileID: 6124622502557711934}
+  - component: {fileID: 4680334173238347434}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -184,7 +185,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030779123, y: -2.2601087}
+  m_Offset: {x: -0.030779123, y: -1.900733}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -195,7 +196,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0830894, y: 3.7606394}
+  m_Size: {x: 3.0830894, y: 4.479391}
   m_EdgeRadius: 0
 --- !u!114 &8447836522125497189
 MonoBehaviour:
@@ -249,3 +250,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+--- !u!114 &4680334173238347434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5248622562572150467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 612c502fe871af8b98e0080fcea20826, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  maxHunger: 100
+  maxThirst: 100
+  currentHealth: 0
+  currentHunger: 0
+  currentThirst: 0
+  healthText: {fileID: 0}
+  hungerText: {fileID: 0}
+  thirstText: {fileID: 0}
+  hungerDecreaseInterval: 10
+  thirstDecreaseInterval: 5
