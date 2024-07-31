@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf83f8cae966413b9be9cb4c8691acb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupText: {fileID: 0}
+  pickupText: {fileID: 6531510983725317952, guid: fa1ae2f3ef586bc319ea0cbb700a6fdd, type: 3}
   itemButton: {fileID: 3242769734631356324, guid: 0a5054989a3653de2853af2dcb937f1a, type: 3}
   itemName: Mushroom
   quantity: 1

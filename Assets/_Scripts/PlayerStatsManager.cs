@@ -34,9 +34,9 @@ public class PlayerStatsManager : MonoBehaviour
         currentThirst = maxThirst;
 
         // Update UI
-        /*UpdateHealthUI();
+        UpdateHealthUI();
         UpdateHungerUI();
-        UpdateThirstUI();*/
+        UpdateThirstUI();
 
         // Start coroutines to decrease hunger and thirst over time
         StartCoroutine(DecreaseHungerOverTime());
@@ -47,7 +47,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         currentHealth += amount;
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-        //UpdateHealthUI();
+        UpdateHealthUI();
 
         // Check if the player is dead
         if (currentHealth <= 0)
@@ -61,7 +61,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         currentHunger += amount;
         currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
-        //UpdateHungerUI();
+        UpdateHungerUI();
 
         Debug.Log(currentHunger);
         // Check if hunger is at zero and apply health penalty
@@ -75,7 +75,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         currentThirst += amount;
         currentThirst = Mathf.Clamp(currentThirst, 0, maxThirst);
-        //UpdateThirstUI();
+        UpdateThirstUI();
 
         // Check if thirst is at zero and apply health penalty
         if (currentThirst <= 0)
@@ -88,7 +88,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         if (healthText != null)
         {
-            healthText.text = "Health: " + currentHealth.ToString();
+            healthText.text = currentHealth.ToString();
         }
     }
 
@@ -96,7 +96,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         if (hungerText != null)
         {
-            hungerText.text = "Hunger: " + currentHunger.ToString();
+            hungerText.text = currentHunger.ToString();
         }
     }
 
@@ -104,7 +104,7 @@ public class PlayerStatsManager : MonoBehaviour
     {
         if (thirstText != null)
         {
-            thirstText.text = "Thirst: " + currentThirst.ToString();
+            thirstText.text = currentThirst.ToString();
         }
     }
 
