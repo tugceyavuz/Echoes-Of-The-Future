@@ -133,7 +133,7 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 3abdbd761237b0c5386ca15d5c62f0b6, type: 3}
   itemDescription: "A bottle of liquid medicine, the closest thing to a miracle in
     a world gone mad. It tastes awful, but it\u2019ll patch you up and keep you going.
-    (Restores 10 health points)"
+    (Restores 20 health points)"
 --- !u!61 &960201494020976571
 BoxCollider2D:
   m_ObjectHideFlags: 0

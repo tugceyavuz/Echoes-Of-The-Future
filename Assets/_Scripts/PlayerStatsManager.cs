@@ -23,8 +23,8 @@ public class PlayerStatsManager : MonoBehaviour
     public TextMeshProUGUI thirstText;
 
     // Time intervals for hunger and thirst decrease
-    public float hungerDecreaseInterval = 5f; // in seconds
-    public float thirstDecreaseInterval = 3f; // in seconds
+    private float hungerDecreaseInterval = 5f; // in seconds
+    private float thirstDecreaseInterval = 10f; // in seconds
 
     private void Start()
     {
@@ -67,7 +67,7 @@ public class PlayerStatsManager : MonoBehaviour
         // Check if hunger is at zero and apply health penalty
         if (currentHunger <= 0)
         {
-            ChangeHealth(-5); //  penalty for starvation
+            ChangeHealth(-1); //  penalty for starvation
         }
     }
 
@@ -80,7 +80,7 @@ public class PlayerStatsManager : MonoBehaviour
         // Check if thirst is at zero and apply health penalty
         if (currentThirst <= 0)
         {
-            ChangeHealth(-5); //  penalty for dehydration
+            ChangeHealth(-1); //  penalty for dehydration
         }
     }
 

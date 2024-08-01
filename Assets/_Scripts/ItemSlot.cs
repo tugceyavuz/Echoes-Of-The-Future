@@ -47,6 +47,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             quantityText.enabled = true;
             isFull = true;
         }
+
+        isClickable = true;
     }
 
     public void IncreaseQuantity(int quantity)
@@ -81,6 +83,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     }
 
+    private bool isClickable = false;
+
     private void OnRightClick()
     {
         bool usable = inventoryManager.UseItem(itemName);
@@ -107,13 +111,19 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = defaultImage;
         isFull = false;
+        isClickable = false;
     }
+
+    
 
     void OnLeftClick()
     {
-        itemDescriptionNameText.text = itemName;
-        itemDescriptionText.text = itemDescription;
-        itemDescriptionImage.sprite = itemSprite;
+        if (isClickable)
+        {
+            itemDescriptionNameText.text = itemName;
+            itemDescriptionText.text = itemDescription;
+            itemDescriptionImage.sprite = itemSprite;
+        }
     }
 
     public static Color HexToColor(string hex)
@@ -144,4 +154,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             return Color.white; // Default to white if invalid code
         }
     }
+
+
 }

@@ -6,8 +6,6 @@ using TMPro;
 public class pickUpSrc : MonoBehaviour
 {
     public TextMeshProUGUI pickupText;
-    private Inventory inventory;
-    public GameObject itemButton;
 
     private bool isPlayerInRange;
 
@@ -28,7 +26,6 @@ public class pickUpSrc : MonoBehaviour
     private void Start()
     {
         pickupText.text = "";
-        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<Inventory>();
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
     }
 
@@ -65,8 +62,6 @@ public class pickUpSrc : MonoBehaviour
 
 
     void PickUpItem() { 
-
-        // For full inventory
         bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
         if (isAdded)
         {
@@ -75,17 +70,5 @@ public class pickUpSrc : MonoBehaviour
         {
             return;
         }
-
-        // For mini inventory
-        /*for (int i = 0; i < inventory.slots.Length; i++)
-        {
-            if (inventory.isFull[i] == false)
-            {
-                inventory.isFull[i] = true;
-                Instantiate(itemButton, inventory.slots[i].transform, false);
-                pickupText.text = "";
-                break;
-            }
-        }*/
     }
 }

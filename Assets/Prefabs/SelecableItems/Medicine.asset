@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Medicine
   m_EditorClassIdentifier: 
   itemName: Medicine
-  amountToChangeStat: 10
+  amountToChangeStat: 20
   statToChange: 1
