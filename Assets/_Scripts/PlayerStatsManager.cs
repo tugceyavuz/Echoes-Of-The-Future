@@ -63,7 +63,6 @@ public class PlayerStatsManager : MonoBehaviour
         currentHunger = Mathf.Clamp(currentHunger, 0, maxHunger);
         UpdateHungerUI();
 
-        Debug.Log(currentHunger);
         // Check if hunger is at zero and apply health penalty
         if (currentHunger <= 0)
         {

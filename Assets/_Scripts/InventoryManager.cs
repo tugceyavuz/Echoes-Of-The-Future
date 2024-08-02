@@ -8,7 +8,9 @@ public class InventoryManager : MonoBehaviour
     public GameObject InventoryMenu;
     public GameObject JournalUI;
     public GameObject BGBlur;
+    public GameObject[] stats;
     public TextMeshProUGUI Title;
+    public TextMeshProUGUI PageTitle;
     public TextMeshProUGUI inventoryFullText; // Text element to show "Inventory full" message
     public bool menuActivated;
     public ItemSlot[] itemSlot;
@@ -34,16 +36,25 @@ public class InventoryManager : MonoBehaviour
             Title.text = "";
             InventoryMenu.SetActive(false);
             menuActivated = false;
+            for (int i = 0; i < 3; i++)
+            {
+                stats[i].SetActive(false);
+            }
         }
         else if (!InventoryMenu.activeInHierarchy)
         {
             if (JournalUI.activeInHierarchy)
             {
                 JournalUI.SetActive(false);
+                PageTitle.text = "";
             }
             Title.text = "INVENTORY";
             BGBlur.SetActive(true);
             InventoryMenu.SetActive(true);
+            for (int i = 0; i < 3; i++)
+            {
+                stats[i].SetActive(true);
+            }
             menuActivated = true;
         }
     }

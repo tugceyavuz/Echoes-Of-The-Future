@@ -7,10 +7,13 @@ public class JournalManager : MonoBehaviour
 {
     public GameObject JournalUI;
     public GameObject InventoryUI;
-
+    public GameObject[] stats;
     public GameObject BGBlur;
+    public GameObject NPC;
+    public GameObject NewsPapers;
     public bool JournalActivated;
     public TextMeshProUGUI Title;
+    public TextMeshProUGUI PageTitle;
     void Start()
     {
         
@@ -30,6 +33,11 @@ public class JournalManager : MonoBehaviour
             BGBlur.SetActive(false);
             JournalActivated = false;
             Title.text = "";
+            for (int i = 0; i < 3; i++)
+            {
+                stats[i].SetActive(false);
+            }
+            PageTitle.text = "";
         }
         else if (!JournalUI.activeInHierarchy)
         {
@@ -40,7 +48,13 @@ public class JournalManager : MonoBehaviour
             BGBlur.SetActive(true);
             Title.text = "JOURNAL";
             JournalUI.SetActive(true);
+            NewsPapers.SetActive(false);
+            NPC.SetActive(false);
             JournalActivated = true;
+            for (int i = 0; i < 3; i++)
+            {
+                stats[i].SetActive(true);
+            }
         }
     }
 }
