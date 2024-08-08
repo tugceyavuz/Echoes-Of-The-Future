@@ -5,6 +5,7 @@ using TMPro;
 
 public class pickUpSrc : MonoBehaviour
 {
+    [SerializeField]
     public TextMeshProUGUI pickupText;
 
     private bool isPlayerInRange;
@@ -12,16 +13,16 @@ public class pickUpSrc : MonoBehaviour
     private InventoryManager inventoryManager;
 
     [SerializeField]
-    private string itemName;
+    public string itemName;
     [SerializeField]
-    private int quantity;
+    public int quantity;
 
     [SerializeField]
-    private Sprite sprite;
+    public Sprite sprite;
 
     [SerializeField]
     [TextArea]
-    private string itemDescription;
+    public string itemDescription;
     
     private void Start()
     {

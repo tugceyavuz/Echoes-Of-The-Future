@@ -155,5 +155,35 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
     }
 
+    public void DropItemFromSlot(){
+
+        if (isClickable)
+        {    
+            GameObject itemToDrop = new GameObject(itemName);
+            pickUpSrc newItem = itemToDrop.AddComponent<pickUpSrc>();
+            newItem.quantity = 1;
+            newItem.itemName = itemName;
+            newItem.sprite = itemSprite;
+            newItem.itemDescription = itemDescription;
+            newItem.pickupText = GameObject.Find("popUp").GetComponent<TextMeshProUGUI>();
+
+            SpriteRenderer sr = itemToDrop.AddComponent<SpriteRenderer>();
+            sr.sprite = itemSprite;
+            sr.sortingOrder = 4;
+
+            BoxCollider2D collider = itemToDrop.AddComponent<BoxCollider2D>();
+            collider.isTrigger = true;
+
+            itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(0, -3, 0);
+
+            this.quantity -= 1;
+            quantityText.text = this.quantity.ToString();
+            if (this.quantity <= 0)
+            {
+                EmptySlot();
+            }
+        }
+    }
+
 
 }
