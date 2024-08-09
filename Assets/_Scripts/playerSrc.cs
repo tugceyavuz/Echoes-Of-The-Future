@@ -48,6 +48,10 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
+        if (DialogManager.GetInstance().dialogueIsPlaying)
+        {
+            return;
+        }
         // Move the player based on input by setting the velocity
         rb.velocity = moveInput * moveSpeed;
     }
