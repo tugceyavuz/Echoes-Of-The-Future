@@ -139,10 +139,13 @@ You can find food and drink around the settlement. Also look around, there might
 MARCUS:
 Alright, be careful out there. I’ll see you outside the border doors.
 
--> END
+    *   [(Leave)]
+    -> END
+
 
 === explore_and_gather ===
 MARCUS:
 Good luck. Remember, you need to gather supplies before heading out. Once you’re ready, go through the west border doors, and I’ll meet you outside.
 
--> END
+ *   [(Leave)]
+    -> END

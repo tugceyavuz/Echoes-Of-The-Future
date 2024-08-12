@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 
 public class DialogManager : MonoBehaviour
 {
-
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private TextMeshProUGUI dialogueText;
@@ -68,13 +67,14 @@ public class DialogManager : MonoBehaviour
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
+        Time.timeScale = 0; // Pause the game
 
         ContinueStory();
     }
 
     private IEnumerator ExitDialogueMode() 
     {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
 
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
@@ -92,8 +92,8 @@ public class DialogManager : MonoBehaviour
         }
         else 
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-                StartCoroutine(ExitDialogueMode());
+            Time.timeScale = 1; // Resume the game
+            StartCoroutine(ExitDialogueMode());
         }
     }
 
