@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class PlayerStatsManager : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class PlayerStatsManager : MonoBehaviour
     public TextMeshProUGUI healthText;
     public TextMeshProUGUI hungerText;
     public TextMeshProUGUI thirstText;
+
+    public Image healthBar;
+    public Image hungerBar;
+    public Image thirstBar;
 
     // Time intervals for hunger and thirst decrease
     private float hungerDecreaseInterval = 5f; // in seconds
@@ -89,6 +94,7 @@ public class PlayerStatsManager : MonoBehaviour
         {
             healthText.text = currentHealth.ToString();
         }
+        healthBar.fillAmount = currentHealth / 100f;
     }
 
     private void UpdateHungerUI()
@@ -97,6 +103,7 @@ public class PlayerStatsManager : MonoBehaviour
         {
             hungerText.text = currentHunger.ToString();
         }
+        hungerBar.fillAmount = currentHunger / 100f;
     }
 
     private void UpdateThirstUI()
@@ -105,6 +112,7 @@ public class PlayerStatsManager : MonoBehaviour
         {
             thirstText.text = currentThirst.ToString();
         }
+        thirstBar.fillAmount = currentThirst / 100f;
     }
 
     private IEnumerator DecreaseHungerOverTime()
