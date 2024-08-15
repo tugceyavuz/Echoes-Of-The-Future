@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -8,12 +9,15 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator; // Reference to the Animator component
     private bool isFacingRight = true; // To check which direction the player is facing
 
+    public float overallScore;
+
     void Start()
     {
         // Get the Rigidbody2D component attached to the player
         rb = GetComponent<Rigidbody2D>();
         // Get the Animator component attached to the player
         animator = GetComponent<Animator>();
+        overallScore = 0;
     }
 
     void Update()
@@ -48,10 +52,6 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (DialogManager.GetInstance().dialogueIsPlaying)
-        {
-            return;
-        }
         // Move the player based on input by setting the velocity
         rb.velocity = moveInput * moveSpeed;
     }
@@ -65,5 +65,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
+    }
+
+    public float CalculateScore(){
+        float average = 100 * overallScore / 300;
+        return average;
     }
 }

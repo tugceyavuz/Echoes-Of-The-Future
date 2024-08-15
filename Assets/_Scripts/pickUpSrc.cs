@@ -11,7 +11,6 @@ public class pickUpSrc : MonoBehaviour
     private bool isPlayerInRange;
 
     private InventoryManager inventoryManager;
-    private TradeInventory tradeManager;
 
     [SerializeField]
     public string itemName;
@@ -29,7 +28,6 @@ public class pickUpSrc : MonoBehaviour
     {
         pickupText.text = "";
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
-        tradeManager = GameObject.Find("TradeManager").GetComponent<TradeInventory>();
     }
 
     void Update()
@@ -66,7 +64,6 @@ public class pickUpSrc : MonoBehaviour
 
     void PickUpItem() { 
         bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
-        tradeManager.AddItem(itemName, quantity, sprite, itemDescription);
         if (isAdded)
         {
             Destroy(gameObject);

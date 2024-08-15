@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -17,6 +18,15 @@ public class InventoryManager : MonoBehaviour
 
     public ItemSO[] itemSOs;
 
+    public bool isItHW1;
+    public bool isItHW2;
+    public string[] HWNames;
+
+    public TextMeshProUGUI button1Text;
+    public TextMeshProUGUI button2Text;
+    public GameObject button1;
+    public GameObject button2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +35,10 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryFullText.text = "";
         }
+        button1Text.text = HWNames[0];
+        button2Text.text = HWNames[1];
+        button1.SetActive(false);
+        button2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -73,6 +87,17 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
+        if (itemName == HWNames[0])
+        {
+            isItHW1 = true;
+            button1.SetActive(true);
+            
+        }
+        if (itemName == HWNames[1])
+        {
+            isItHW2 = true;
+            button2.SetActive(true);
+        }
         // Try to stack items in existing slots
         for (int i = 0; i < itemSlot.Length; i++)
         {

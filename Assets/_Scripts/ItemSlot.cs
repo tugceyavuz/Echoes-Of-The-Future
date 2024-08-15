@@ -100,7 +100,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     }
 
-    private void EmptySlot()
+    public void EmptySlot()
     {
         Color color = HexToColor(hexColorCode);
 
