@@ -106,7 +106,6 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
         quantityText.enabled = false;
         itemImage.sprite = defaultImage;
-        itemImage.color = color;
         itemDescriptionNameText.text = "";
         itemDescriptionText.text = "";
         itemDescriptionImage.sprite = defaultImage;

@@ -1047,7 +1047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1533105979440125878
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2069,9 +2069,9 @@ RectTransform:
   - {fileID: 2211580493250287640}
   m_Father: {fileID: 9189382097146146156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1473049453686236119
@@ -2773,7 +2773,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7882353, g: 0.654902, b: 0.41960785, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3102,6 +3102,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 226fc4d19803f4590b28acb42b38847c, type: 2}
   - {fileID: 11400000, guid: 32c87462423ef269f9bbc85d29c72cd9, type: 2}
   - {fileID: 11400000, guid: 19e8c54e7740148a686f5c76b269b9bb, type: 2}
+  isItHW1: 0
+  isItHW2: 0
+  HWNames: []
+  button1Text: {fileID: 0}
+  button2Text: {fileID: 0}
+  button1: {fileID: 0}
+  button2: {fileID: 0}
 --- !u!114 &6835824063845155699
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3483,9 +3490,9 @@ RectTransform:
   - {fileID: 4420362125421867924}
   m_Father: {fileID: 9189382097146146156}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 50, y: -150}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6512520999523418940
@@ -3587,7 +3594,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7882353, g: 0.654902, b: 0.41960785, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -6113,6 +6120,10 @@ PrefabInstance:
     - target: {fileID: 1558388075377687137, guid: 34e749cb6fbd44f8a950e6a0768fd17a, type: 3}
       propertyPath: m_Name
       value: ItemSlot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1558388075377687137, guid: 34e749cb6fbd44f8a950e6a0768fd17a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6992136196743113802, guid: 34e749cb6fbd44f8a950e6a0768fd17a, type: 3}
       propertyPath: inventoryManager
