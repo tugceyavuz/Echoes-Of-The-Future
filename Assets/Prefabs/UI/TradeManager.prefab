@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6580512181802563886
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2870173041312541964}
+  - component: {fileID: 6173616555566769566}
+  m_Layer: 0
+  m_Name: TradeManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2870173041312541964
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6580512181802563886}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4794097, y: -1.1129694, z: -0.17315196}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6173616555566769566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6580512181802563886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b70511e122f31fe79d7f21088cd490b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TradePanel: {fileID: 0}
+  bgBlur: {fileID: 0}
+  noMessage: {fileID: 0}
+  doneMessage: {fileID: 0}
+  tradeApprove: {fileID: 0}
+  isTradeDone: 0
+  amount: 5
+  slots:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  GivenItemName: Mushroom
+  itemName: Medicine
+  quantity: 2
+  itemSprite: {fileID: 21300000, guid: 3abdbd761237b0c5386ca15d5c62f0b6, type: 3}
+  itemDescription: "A bottle of liquid medicine, the closest thing to a miracle in
+    a world gone mad. It tastes awful, but it\u2019ll patch you up and keep you going.
+    (Restores 20 health points)"
+  inventoryManager: {fileID: 0}

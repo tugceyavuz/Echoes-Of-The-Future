@@ -14,7 +14,7 @@ public class Trade : MonoBehaviour
     private bool isItemReceived;
     public int amount;
     public List<GameObject> slots;
-
+    public string GivenItemName;
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
@@ -63,10 +63,10 @@ public class Trade : MonoBehaviour
     }
 
 
-    public void TradeItem(string usedItem)
+    public void TradeItem()
     {
         // Get the Text component of the child object of the button to retrieve the item name
-        if (usedItem == null)
+        if (GivenItemName == null)
         {
             Debug.LogError("no string entered");
             return;
@@ -84,7 +84,7 @@ public class Trade : MonoBehaviour
                 break;
             }
 
-            if (item != null && item.itemName == usedItem)
+            if (item != null && item.itemName == GivenItemName)
             {
                 if (amount >= item.quantity)
                 {
