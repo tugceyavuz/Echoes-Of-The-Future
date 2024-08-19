@@ -12,6 +12,10 @@ public class DialogTrigger : MonoBehaviour
     [SerializeField] private TextAsset firstInkJSON;  // Ink script for the first interaction
     [SerializeField] private TextAsset subsequentInkJSON;  // Ink script for subsequent interactions
 
+    [SerializeField] private TextAsset traderInkJSON;
+    public Trade trading;
+    public bool areTheyTrader;
+
     public string NPCName;
     public TextMeshProUGUI NPCNamePanel;
     public Sprite NPCSprite;
@@ -48,7 +52,19 @@ public class DialogTrigger : MonoBehaviour
                 }
                 else
                 {
-                    DialogManager.GetInstance().EnterDialogueMode(subsequentInkJSON);
+                    if (areTheyTrader && trading.isTradeDone)
+                    {
+                        DialogManager.GetInstance().EnterDialogueMode(traderInkJSON);
+                        return;
+                    }else if (areTheyTrader && !trading.isTradeDone){
+                        trading.OpenTradePanel();
+                        return;
+                    }
+                    if (subsequentInkJSON != null)
+                    {
+                        DialogManager.GetInstance().EnterDialogueMode(subsequentInkJSON);
+                    }
+                   
                 }
             }
         }

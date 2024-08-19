@@ -19,6 +19,11 @@ public class ComputerPuzzle : MonoBehaviour
     public PlaceHW placedHW;
     public string[] HWNames;
 
+    private void Start() {
+        ComputerCanvas.SetActive(false);
+        CodePanel.SetActive(false);
+    }
+
     private void Update() {
         if (playerInRange && Input.GetKeyDown(KeyCode.C))
         {

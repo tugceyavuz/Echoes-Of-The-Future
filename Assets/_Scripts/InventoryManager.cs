@@ -41,6 +41,19 @@ public class InventoryManager : MonoBehaviour
         button2.SetActive(false);
     }
 
+    private void Update() {
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            BGBlur.SetActive(false);
+            Title.text = "";
+            InventoryMenu.SetActive(false);
+            menuActivated = false;
+            for (int i = 0; i < 3; i++)
+            {
+                stats[i].SetActive(false);
+            }
+        }
+    }
+
     // Update is called once per frame
     public void OpenInventory()
     {

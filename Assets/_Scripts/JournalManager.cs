@@ -22,7 +22,17 @@ public class JournalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            JournalUI.SetActive(false);
+            BGBlur.SetActive(false);
+            JournalActivated = false;
+            Title.text = "";
+            for (int i = 0; i < 3; i++)
+            {
+                stats[i].SetActive(false);
+            }
+            PageTitle.text = "";
+        }
     }
 
     public void OpenJournal()
