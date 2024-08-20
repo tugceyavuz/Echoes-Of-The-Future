@@ -17,14 +17,6 @@ public class DontDestroy : MonoBehaviour
         else if (persistentObjects[objectIndex] != gameObject)
         {
             Destroy(gameObject);
-        }
-
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        }   
     }
 }

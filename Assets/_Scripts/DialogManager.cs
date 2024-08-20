@@ -8,17 +8,18 @@ using UnityEngine.EventSystems;
 public class DialogManager : MonoBehaviour
 {
     [Header("Dialogue UI")]
-    [SerializeField] private GameObject dialoguePanel;
-    [SerializeField] private TextMeshProUGUI dialogueText;
+    private GameObject dialoguePanel;
+    private TextMeshProUGUI dialogueText;
 
     [Header("Choices UI")]
-    [SerializeField] private GameObject[] choices;
+    private GameObject[] choices;
     private TextMeshProUGUI[] choicesText;
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
 
     private static DialogManager instance;
+    private GameObject canvas;
 
     private void Awake() 
     {
@@ -27,6 +28,23 @@ public class DialogManager : MonoBehaviour
             Debug.LogWarning("Found more than one Dialogue Manager in the scene");
         }
         instance = this;
+
+
+        canvas = GameObject.Find("Canvas");
+        dialoguePanel = canvas.transform.Find("DialogPanel").gameObject;
+
+        GameObject DialogText = canvas.transform.Find("DialogPanel/TextPanel/DialogText").gameObject;
+        dialogueText = DialogText.GetComponent<TextMeshProUGUI>();
+
+        Transform parentTransform = canvas.transform.Find("DialogPanel/OptionsPanel");
+
+        choices = new GameObject[parentTransform.childCount];
+
+        // Loop through each child and assign to the array
+        for (int i = 0; i < parentTransform.childCount; i++)
+        {
+            choices[i] = parentTransform.GetChild(i).gameObject;
+        }
     }
 
     public static DialogManager GetInstance() 

@@ -19,18 +19,38 @@ public class PlayerStatsManager : MonoBehaviour
     public int currentThirst;
 
     // UI elements to display stats
-    public TextMeshProUGUI healthText;
-    public TextMeshProUGUI hungerText;
-    public TextMeshProUGUI thirstText;
+    private TextMeshProUGUI healthText;
+    private TextMeshProUGUI hungerText;
+    private TextMeshProUGUI thirstText;
 
-    public Image healthBar;
-    public Image hungerBar;
-    public Image thirstBar;
+    private Image healthBar;
+    private Image hungerBar;
+    private Image thirstBar;
 
     // Time intervals for hunger and thirst decrease
     private float hungerDecreaseInterval = 5f; // in seconds
     private float thirstDecreaseInterval = 10f; // in seconds
 
+    private GameObject canvas;
+
+    private void Awake() {
+        canvas = GameObject.Find("Canvas");
+
+        GameObject health = canvas.transform.Find("StatsPanel/HealthPanel/NumberPanel/HealthPointsText").gameObject;
+        healthText = health.GetComponent<TextMeshProUGUI>();
+        GameObject Ihealth = canvas.transform.Find("StatsPanel/HealthPanel/BarPanel/Image").gameObject;
+        healthBar = Ihealth.GetComponent<Image>();
+
+        GameObject hunger = canvas.transform.Find("StatsPanel/HungerPanel/TextPanel/HungerPointsText").gameObject;
+        hungerText = hunger.GetComponent<TextMeshProUGUI>();
+        GameObject Ihunger = canvas.transform.Find("StatsPanel/HungerPanel/BarPanel/Image").gameObject;
+        hungerBar = Ihunger.GetComponent<Image>();
+
+        GameObject thirst = canvas.transform.Find("StatsPanel/ThirstPanel/TextPanel/ThirstPointsText").gameObject;
+        thirstText = thirst.GetComponent<TextMeshProUGUI>();
+        GameObject Ithirst = canvas.transform.Find("StatsPanel/ThirstPanel/BarPanel/Image").gameObject;
+        thirstBar = Ithirst.GetComponent<Image>();
+    }
     private void Start()
     {
         // Initialize stats

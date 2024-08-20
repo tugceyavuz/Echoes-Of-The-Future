@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.27, y: -2.78, z: -0.13732408}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: {fileID: 6531510983725317952, guid: fa1ae2f3ef586bc319ea0cbb700a6fdd, type: 3}
-  itemButton: {fileID: 0}
   itemName: Bread Piece
   quantity: 1
   sprite: {fileID: 21300000, guid: 62197c55be3b3d1d980370863203c512, type: 3}

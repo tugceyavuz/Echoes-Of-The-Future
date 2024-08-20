@@ -8,16 +8,28 @@ public class ComputerPuzzle : MonoBehaviour
 {
     public GameObject ComputerCanvas;
     public GameObject CodePanel;
-    public GameObject SceneCanvas;
+    private GameObject SceneCanvas;
     private bool playerInRange;
     public bool option1;
     public bool option2;
 
     public PlaceHW CompuerHW;
 
-    public TextMeshProUGUI popup;
+    private TextMeshProUGUI popup;
     public PlaceHW placedHW;
     public string[] HWNames;
+
+    private PlayerMovement player;
+    public GameObject FinishScreen;
+    private bool done;
+    
+    private void Awake() {
+        SceneCanvas = GameObject.Find("Canvas");
+        GameObject PopUp = GameObject.Find("Canvas").transform.Find("popUp").gameObject;
+        popup = PopUp.GetComponent<TextMeshProUGUI>();
+
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+    }
 
     private void Start() {
         ComputerCanvas.SetActive(false);
@@ -62,10 +74,6 @@ public class ComputerPuzzle : MonoBehaviour
             popup.text = "";
         }
     }
-    
-    public PlayerMovement player;
-    public GameObject FinishScreen;
-    private bool done;
 
     public void Option(int name){
         if (name == 1)

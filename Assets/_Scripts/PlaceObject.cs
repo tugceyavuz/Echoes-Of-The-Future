@@ -11,9 +11,17 @@ public class PlaceObject : MonoBehaviour
     private bool isPlayerInRange; // Check if the player is in range
     private Transform playerTransform; // The player's transform
 
-    public TextMeshProUGUI pickupText;
+    private TextMeshProUGUI pickupText;
+    public int quantity;
 
-    private Vector3 placementOffset = new Vector3(0, -3, 0);
+    private Vector3 placementOffset = new Vector3(0, 0, 0);
+
+    private GameObject canvas;
+    private void Awake() {
+        canvas = GameObject.Find("Canvas");
+        GameObject PopUp = canvas.transform.Find("popUp").gameObject;
+        pickupText = PopUp.GetComponent<TextMeshProUGUI>();
+    }
 
     void Start()
     {
@@ -58,7 +66,10 @@ public class PlaceObject : MonoBehaviour
         {
             Vector3 placementPosition = playerTransform.position + placementOffset;
             // Instantiate the object at the player's position with the same rotation
-            Instantiate(objectToPlace, placementPosition, playerTransform.rotation);
+            for (int i = 0; i < quantity; i++)
+            {
+                Instantiate(objectToPlace, placementPosition, playerTransform.rotation);
+            }
             pickupText.text = "";
             Destroy(gameObject);
         }

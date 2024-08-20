@@ -34,8 +34,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -150,8 +150,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.040965676, y: -3.496119}
-  m_Size: {x: 1.1109622, y: 1.1109622}
+  m_Offset: {x: -0.021551736, y: 0.45395744}
+  m_Size: {x: 1.14979, y: 1.14979}
   m_Direction: 0
 --- !u!61 &2592077124028055038
 BoxCollider2D:
@@ -185,18 +185,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.030779123, y: -1.900733}
+  m_Offset: {x: -0.030779123, y: 1.9021199}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 8, y: 8}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 1.875, y: 4.0625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.0830894, y: 4.479391}
+  m_Size: {x: 3.0830894, y: 5.2436805}
   m_EdgeRadius: 0
 --- !u!95 &2874278826658491243
 Animator:
@@ -232,6 +232,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 8
+  overallScore: 0
 --- !u!114 &4680334173238347434
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,9 +251,6 @@ MonoBehaviour:
   currentHealth: 0
   currentHunger: 0
   currentThirst: 0
-  healthText: {fileID: 0}
-  hungerText: {fileID: 0}
-  thirstText: {fileID: 0}
 --- !u!114 &1624578560660117192
 MonoBehaviour:
   m_ObjectHideFlags: 0

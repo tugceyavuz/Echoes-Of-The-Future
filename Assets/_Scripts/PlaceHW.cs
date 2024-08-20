@@ -6,16 +6,49 @@ using UnityEngine.UI;
 
 public class PlaceHW : MonoBehaviour
 {
-    public GameObject PopUpPanel;
-    public GameObject BGBlur;
-    public GameObject withHW;
-    public GameObject noHW;
+    private GameObject PopUpPanel;
+    private GameObject BGBlur;
+    private GameObject withHW;
+    private GameObject noHW;
+    private List<GameObject> slots = new List<GameObject>();
+    private GameObject HWPlaced;
+    public string usedItem;
     private bool playerInRange;
     public bool isItTrade;
     public bool isHWIcluded;
 
-    public TextMeshProUGUI popup;
+    private TextMeshProUGUI popup;
     private InventoryManager inventoryManager ;
+
+    private GameObject canvas;
+
+    private void Awake() {
+        canvas = GameObject.Find("Canvas");
+        PopUpPanel = canvas.transform.Find("PlaceItemPanel").gameObject;
+        withHW = canvas.transform.Find("PlaceItemPanel/withHW").gameObject;
+        noHW = canvas.transform.Find("PlaceItemPanel/noHW").gameObject;
+        HWPlaced = canvas.transform.Find("PlaceItemPanel/HWPlaced").gameObject;
+        BGBlur = canvas.transform.Find("BlurBG").gameObject;
+
+        GameObject popUp = canvas.transform.Find("popUp").gameObject;
+        popup = popUp.GetComponent<TextMeshProUGUI>();
+
+        inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
+
+        Transform parentTransform = canvas.transform.Find("InventoryMenu/InventorySlots");
+
+        if (parentTransform != null)
+        {
+            foreach (Transform slot in parentTransform)
+            {
+                slots.Add(slot.gameObject);  // Add each child GameObject to the slots list
+            }
+        }
+        else
+        {
+            Debug.LogError("The specified path does not exist under the Canvas.");
+        }
+    }
 
     private void Start() {
         inventoryManager =  GameObject.Find("Canvas").GetComponent<InventoryManager>();
@@ -67,10 +100,6 @@ public class PlaceHW : MonoBehaviour
             popup.text = "";
         }
     }
-
-    public List<GameObject> slots;
-    public GameObject HWPlaced;
-    public string usedItem;
 
     public void UseItem(TextMeshProUGUI buttonName)
     {

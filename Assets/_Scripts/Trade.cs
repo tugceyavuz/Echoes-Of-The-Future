@@ -5,20 +5,46 @@ using TMPro;
 
 public class Trade : MonoBehaviour
 {
-    public GameObject TradePanel;
-    public GameObject bgBlur;
-    public GameObject noMessage;
-    public GameObject doneMessage;
-    public GameObject tradeApprove;
+    private GameObject TradePanel;
+    private GameObject bgBlur;
+    private GameObject noMessage;
+    private GameObject doneMessage;
+    private GameObject tradeApprove;
     public bool isTradeDone;
     private bool isItemReceived;
     public int amount;
-    public List<GameObject> slots;
+    private List<GameObject> slots = new List<GameObject>();
     public string GivenItemName;
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
     public string itemDescription;
+    private InventoryManager inventoryManager;
+    private GameObject canvas;
+
+    private void Awake() {
+        canvas = GameObject.Find("Canvas");
+        TradePanel = canvas.transform.Find("TradePanel").gameObject;
+        tradeApprove = canvas.transform.Find("TradePanel/withResources").gameObject;
+        noMessage = canvas.transform.Find("TradePanel/notEnough").gameObject;
+        doneMessage = canvas.transform.Find("TradePanel/tradeDone").gameObject;
+        bgBlur = canvas.transform.Find("BlurBG").gameObject;
+        inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
+
+        Transform parentTransform = canvas.transform.Find("InventoryMenu/InventorySlots");
+
+        if (parentTransform != null)
+        {
+            foreach (Transform slot in parentTransform)
+            {
+                slots.Add(slot.gameObject);  // Add each child GameObject to the slots list
+            }
+        }
+        else
+        {
+            Debug.LogError("The specified path does not exist under the Canvas.");
+        }
+    }
 
     private void Start() {
         TradePanel.SetActive(false);
@@ -55,8 +81,6 @@ public class Trade : MonoBehaviour
         bgBlur.SetActive(false);
         Time.timeScale = 1;
     }
-
-    public InventoryManager inventoryManager;
 
     public void ReceiveItem(){
         inventoryManager.AddItem(itemName, quantity, itemSprite, itemDescription);

@@ -5,24 +5,19 @@ using TMPro;
 
 public class pickUpSrc : MonoBehaviour
 {
-    [SerializeField]
     public TextMeshProUGUI pickupText;
-
     private bool isPlayerInRange;
-
     private InventoryManager inventoryManager;
 
-    [SerializeField]
     public string itemName;
-    [SerializeField]
     public int quantity;
-
-    [SerializeField]
     public Sprite sprite;
-
-    [SerializeField]
-    [TextArea]
     public string itemDescription;
+
+    private void Awake() {
+        GameObject PopUp = GameObject.Find("Canvas").transform.Find("popUp").gameObject;
+        pickupText = PopUp.GetComponent<TextMeshProUGUI>();
+    }
     
     private void Start()
     {

@@ -17,18 +17,32 @@ public class DialogTrigger : MonoBehaviour
     public bool areTheyTrader;
 
     public string NPCName;
-    public TextMeshProUGUI NPCNamePanel;
+    private TextMeshProUGUI NPCNamePanel;
     public Sprite NPCSprite;
 
-    public Image NPCImage;
+    private Image NPCImage;
 
-    public TextMeshProUGUI dialogText;
-    public TextMeshProUGUI popUp;
+    private TextMeshProUGUI dialogText;
+    private TextMeshProUGUI popUp;
 
     private bool playerInRange;
     private bool isFirstInteraction;
+    private GameObject canvas;
 
     private void Awake() {
+        canvas = GameObject.Find("Canvas");
+        GameObject PopUp = canvas.transform.Find("popUp").gameObject;
+        popUp = PopUp.GetComponent<TextMeshProUGUI>();
+
+        GameObject DialogText = canvas.transform.Find("DialogPanel/TextPanel/DialogText").gameObject;
+        dialogText = DialogText.GetComponent<TextMeshProUGUI>();
+
+        GameObject NPCimage = canvas.transform.Find("DialogPanel/NPCImagePanel").gameObject;
+        NPCImage = NPCimage.GetComponent<Image>();
+        
+        GameObject NPCName = canvas.transform.Find("DialogPanel/NPCName").gameObject;
+        NPCNamePanel = NPCName.GetComponent<TextMeshProUGUI>();
+        
         visualCue.SetActive(false);
         playerInRange = false;
         isFirstInteraction = true;  // Initialize the flag for the first interaction

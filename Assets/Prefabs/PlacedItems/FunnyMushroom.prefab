@@ -31,7 +31,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.79, y: -0.31084394, z: -0.06770387}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -100,7 +100,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: {fileID: 6531510983725317952, guid: fa1ae2f3ef586bc319ea0cbb700a6fdd, type: 3}
-  itemButton: {fileID: 4311519071369597462, guid: a2faa4becc4f5c63d863c1ab62ebba24, type: 3}
   itemName: Funny Mushroom
   quantity: 1
   sprite: {fileID: 978821589, guid: 3fd9b378663dd05eea4512273b3d8cc5, type: 3}
