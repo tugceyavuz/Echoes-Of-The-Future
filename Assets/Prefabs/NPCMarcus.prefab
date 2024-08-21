@@ -237,9 +237,9 @@ MonoBehaviour:
   trading: {fileID: 0}
   areTheyTrader: 1
   NPCName: Marcus King
-  NPCNamePanel: {fileID: 0}
   NPCSprite: {fileID: -1226762944, guid: 89941f038d6518803a1efc0fde3442a2, type: 3}
-  NPCImage: {fileID: 0}
+  NPCInfo: Marcus King is a middle-aged survivor who serves as the leader of a small
+    settlement in a less polluted area.
 --- !u!1 &3771208303118015732
 GameObject:
   m_ObjectHideFlags: 0

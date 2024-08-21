@@ -173,7 +173,10 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
             BoxCollider2D collider = itemToDrop.AddComponent<BoxCollider2D>();
             collider.isTrigger = true;
 
-            itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position + new Vector3(0, -3, 0);
+            itemToDrop.transform.position = GameObject.FindWithTag("Player").transform.position;
+
+            if(itemName == "Mushroom" || itemName == "Funny Mushroom")
+                itemToDrop.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
 
             this.quantity -= 1;
             quantityText.text = this.quantity.ToString();

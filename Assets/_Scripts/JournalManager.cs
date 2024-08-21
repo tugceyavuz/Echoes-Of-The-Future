@@ -14,10 +14,10 @@ public class JournalManager : MonoBehaviour
     public bool JournalActivated;
     public TextMeshProUGUI Title;
     public TextMeshProUGUI PageTitle;
-    void Start()
-    {
-        
-    }
+
+    public PaperSlot[] itemSlot;
+    public NPCSlots[] NPCSlot;
+
 
     // Update is called once per frame
     void Update()
@@ -58,7 +58,8 @@ public class JournalManager : MonoBehaviour
             BGBlur.SetActive(true);
             Title.text = "JOURNAL";
             JournalUI.SetActive(true);
-            NewsPapers.SetActive(false);
+            NewsPapers.SetActive(true);
+            PageTitle.text = "Collected Documents Page";
             NPC.SetActive(false);
             JournalActivated = true;
             for (int i = 0; i < 3; i++)
@@ -67,4 +68,37 @@ public class JournalManager : MonoBehaviour
             }
         }
     }
+
+    public bool AddItemNPC(string itemName,  Sprite itemSprite, string itemDescription)
+    {
+        // Add items to new slots
+        for (int i = 0; i < NPCSlot.Length; i++)
+        {
+            if (!NPCSlot[i].isFull)
+            {
+
+                NPCSlot[i].AddItem(itemName, itemSprite, itemDescription);
+                return true;  
+            }
+        }
+        return false;
+    }
+
+
+    public bool AddItemPaper(string itemName, string itemDescription)
+    {
+        // Add items to new slots
+        for (int i = 0; i < itemSlot.Length; i++)
+        {
+            if (!itemSlot[i].isFull)
+            {
+
+                itemSlot[i].AddItem(itemName, itemDescription);
+                return true;  
+            }
+        }
+        return false;
+    }
+
+
 }

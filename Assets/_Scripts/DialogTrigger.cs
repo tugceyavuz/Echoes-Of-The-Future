@@ -19,18 +19,24 @@ public class DialogTrigger : MonoBehaviour
     public string NPCName;
     private TextMeshProUGUI NPCNamePanel;
     public Sprite NPCSprite;
-
+    public string NPCInfo;
     private Image NPCImage;
 
     private TextMeshProUGUI dialogText;
     private TextMeshProUGUI popUp;
 
+    private JournalManager journalManager;
     private bool playerInRange;
     private bool isFirstInteraction;
     private GameObject canvas;
+    public DialogManager dialogManager;
 
     private void Awake() {
         canvas = GameObject.Find("Canvas");
+        journalManager = canvas.GetComponent<JournalManager>();
+
+        dialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
+
         GameObject PopUp = canvas.transform.Find("popUp").gameObject;
         popUp = PopUp.GetComponent<TextMeshProUGUI>();
 
@@ -49,7 +55,7 @@ public class DialogTrigger : MonoBehaviour
     }
 
     private void Update() {
-        if (playerInRange && !DialogManager.GetInstance().dialogueIsPlaying)
+        if (playerInRange && !dialogManager.dialogueIsPlaying)
         {
             visualCue.SetActive(true);
             
@@ -61,14 +67,15 @@ public class DialogTrigger : MonoBehaviour
                 // Check if it's the first interaction
                 if (isFirstInteraction)
                 {
-                    DialogManager.GetInstance().EnterDialogueMode(firstInkJSON);
+                    journalManager.AddItemNPC(NPCName, NPCSprite, NPCInfo);
+                    dialogManager.EnterDialogueMode(firstInkJSON);
                     isFirstInteraction = false;  // Set the flag to false after the first interaction
                 }
                 else
                 {
                     if (areTheyTrader && trading.isTradeDone)
                     {
-                        DialogManager.GetInstance().EnterDialogueMode(traderInkJSON);
+                       dialogManager.EnterDialogueMode(traderInkJSON);
                         return;
                     }else if (areTheyTrader && !trading.isTradeDone){
                         trading.OpenTradePanel();
@@ -76,7 +83,7 @@ public class DialogTrigger : MonoBehaviour
                     }
                     if (subsequentInkJSON != null)
                     {
-                        DialogManager.GetInstance().EnterDialogueMode(subsequentInkJSON);
+                        dialogManager.EnterDialogueMode(subsequentInkJSON);
                     }
                    
                 }

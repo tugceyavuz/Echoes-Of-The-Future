@@ -4,6 +4,10 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/// <summary>
+/// TOO everythings will be divided, stats vs from screens
+/// </summary>
+
 public class InventoryManager : MonoBehaviour
 {
     public GameObject InventoryMenu;
@@ -35,6 +39,7 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryFullText.text = "";
         }
+        Debug.Log("Start");
         button1Text.text = HWNames[0];
         button2Text.text = HWNames[1];
         button1.SetActive(false);
