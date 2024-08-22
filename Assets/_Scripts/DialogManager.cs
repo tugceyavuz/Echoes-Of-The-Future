@@ -25,7 +25,7 @@ public class DialogManager : MonoBehaviour
     {
         instance = this;
 
-        canvas = GameObject.Find("Canvas");
+        canvas = GameObject.Find("PanelsCanvas");
         dialoguePanel = canvas.transform.Find("DialogPanel").gameObject;
 
         GameObject DialogText = canvas.transform.Find("DialogPanel/TextPanel/DialogText").gameObject;

@@ -24,12 +24,10 @@ public class InventoryManager : MonoBehaviour
 
     public bool isItHW1;
     public bool isItHW2;
-    public string[] HWNames;
 
-    public TextMeshProUGUI button1Text;
-    public TextMeshProUGUI button2Text;
-    public GameObject button1;
-    public GameObject button2;
+    private PlaceHW placeHW;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +37,6 @@ public class InventoryManager : MonoBehaviour
         {
             inventoryFullText.text = "";
         }
-        Debug.Log("Start");
-        button1Text.text = HWNames[0];
-        button2Text.text = HWNames[1];
-        button1.SetActive(false);
-        button2.SetActive(false);
     }
 
     private void Update() {
@@ -56,6 +49,9 @@ public class InventoryManager : MonoBehaviour
             {
                 stats[i].SetActive(false);
             }
+        }else
+        {
+            placeHW = GameObject.Find("ComputerHW").GetComponent<PlaceHW>();
         }
     }
 
@@ -105,16 +101,16 @@ public class InventoryManager : MonoBehaviour
 
     public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
-        if (itemName == HWNames[0])
+        if (itemName == placeHW.HWNames[0])
         {
             isItHW1 = true;
-            button1.SetActive(true);
+            placeHW.button1.SetActive(true);
             
         }
-        if (itemName == HWNames[1])
+        if (itemName == placeHW.HWNames[1])
         {
             isItHW2 = true;
-            button2.SetActive(true);
+            placeHW.button2.SetActive(true);
         }
         // Try to stack items in existing slots
         for (int i = 0; i < itemSlot.Length; i++)

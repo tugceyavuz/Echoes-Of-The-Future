@@ -9,6 +9,7 @@ public class PaperPickUp : MonoBehaviour
     private bool isPlayerInRange;
     private JournalManager journalManager;
 
+    public GameObject Allert;
     public string itemName;
     public string itemDescription;
 
@@ -16,6 +17,7 @@ public class PaperPickUp : MonoBehaviour
         GameObject PopUp = GameObject.Find("Canvas").transform.Find("popUp").gameObject;
         pickupText = PopUp.GetComponent<TextMeshProUGUI>();
         journalManager = GameObject.Find("Canvas").GetComponent<JournalManager>();
+        Allert.SetActive(false);
     }
     
     private void Start()
@@ -39,6 +41,7 @@ public class PaperPickUp : MonoBehaviour
         {
             // Display the message
             pickupText.text = "Press E to pick it up";
+            Allert.SetActive(true);
             isPlayerInRange = true;
         }
     }
@@ -50,6 +53,7 @@ public class PaperPickUp : MonoBehaviour
         {
             // Clear the message
             pickupText.text = "";
+            Allert.SetActive(false);
             isPlayerInRange = false;
         }
     }

@@ -32,8 +32,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 43.29, y: -1.2, z: -0.05851998}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8470042559026847459}
   m_Father: {fileID: 0}
@@ -234,8 +234,7 @@ MonoBehaviour:
   firstInkJSON: {fileID: 4900000, guid: d4d837268f6c9f10b8f74958d001a59e, type: 3}
   subsequentInkJSON: {fileID: 4900000, guid: 61d41d9ca054e4dcbae0656b2157b1eb, type: 3}
   traderInkJSON: {fileID: 4900000, guid: 9f9da8a35f7cb51a79ed34cc36184c9d, type: 3}
-  trading: {fileID: 0}
-  areTheyTrader: 1
+  areTheyTrader: 0
   NPCName: Marcus King
   NPCSprite: {fileID: -1226762944, guid: 89941f038d6518803a1efc0fde3442a2, type: 3}
   NPCInfo: Marcus King is a middle-aged survivor who serves as the leader of a small

@@ -23,7 +23,7 @@ public class Trade : MonoBehaviour
     private GameObject canvas;
 
     private void Awake() {
-        canvas = GameObject.Find("Canvas");
+        canvas = GameObject.Find("PanelsCanvas");
         TradePanel = canvas.transform.Find("TradePanel").gameObject;
         tradeApprove = canvas.transform.Find("TradePanel/withResources").gameObject;
         noMessage = canvas.transform.Find("TradePanel/notEnough").gameObject;
@@ -31,7 +31,7 @@ public class Trade : MonoBehaviour
         bgBlur = canvas.transform.Find("BlurBG").gameObject;
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
 
-        Transform parentTransform = canvas.transform.Find("InventoryMenu/InventorySlots");
+        Transform parentTransform = GameObject.Find("Canvas").transform.Find("InventoryMenu/InventorySlots");
 
         if (parentTransform != null)
         {

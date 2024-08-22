@@ -22,8 +22,14 @@ public class PlaceHW : MonoBehaviour
 
     private GameObject canvas;
 
+    public string[] HWNames;
+    private TextMeshProUGUI button1Text;
+    private TextMeshProUGUI button2Text;
+    public GameObject button1;
+    public GameObject button2;
+
     private void Awake() {
-        canvas = GameObject.Find("Canvas");
+        canvas = GameObject.Find("PanelsCanvas");
         PopUpPanel = canvas.transform.Find("PlaceItemPanel").gameObject;
         withHW = canvas.transform.Find("PlaceItemPanel/withHW").gameObject;
         noHW = canvas.transform.Find("PlaceItemPanel/noHW").gameObject;
@@ -35,7 +41,7 @@ public class PlaceHW : MonoBehaviour
 
         inventoryManager = GameObject.Find("Canvas").GetComponent<InventoryManager>();
 
-        Transform parentTransform = canvas.transform.Find("InventoryMenu/InventorySlots");
+        Transform parentTransform = GameObject.Find("Canvas").transform.Find("InventoryMenu/InventorySlots");
 
         if (parentTransform != null)
         {
@@ -48,10 +54,18 @@ public class PlaceHW : MonoBehaviour
         {
             Debug.LogError("The specified path does not exist under the Canvas.");
         }
+
+        button1 = canvas.transform.Find("PlaceItemPanel/withHW/ButtonPanel/Button").gameObject;
+        button2 = canvas.transform.Find("PlaceItemPanel/withHW/ButtonPanel/Button (1)").gameObject;
+        button1.SetActive(false);
+        button2.SetActive(false);
+        button1Text = canvas.transform.Find("PlaceItemPanel/withHW/ButtonPanel/Button/ButtonName1").gameObject.GetComponent<TextMeshProUGUI>();
+        button2Text = canvas.transform.Find("PlaceItemPanel/withHW/ButtonPanel/Button (1)/ButtonName2").gameObject.GetComponent<TextMeshProUGUI>();
+        button1Text.text = HWNames[0];
+        button2Text.text = HWNames[1];
     }
 
     private void Start() {
-        inventoryManager =  GameObject.Find("Canvas").GetComponent<InventoryManager>();
         noHW.SetActive(true);
         withHW.SetActive(false);
         HWPlaced.SetActive(false);

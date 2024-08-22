@@ -23,6 +23,7 @@ public class JournalManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
+            Time.timeScale = 1;
             JournalUI.SetActive(false);
             BGBlur.SetActive(false);
             JournalActivated = false;
@@ -39,6 +40,7 @@ public class JournalManager : MonoBehaviour
     {
         if (JournalUI.activeInHierarchy)
         {
+            Time.timeScale = 1;
             JournalUI.SetActive(false);
             BGBlur.SetActive(false);
             JournalActivated = false;
@@ -66,6 +68,7 @@ public class JournalManager : MonoBehaviour
             {
                 stats[i].SetActive(true);
             }
+            Time.timeScale = 0;
         }
     }
 

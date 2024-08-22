@@ -13,7 +13,7 @@ public class DialogTrigger : MonoBehaviour
     [SerializeField] private TextAsset subsequentInkJSON;  // Ink script for subsequent interactions
 
     [SerializeField] private TextAsset traderInkJSON;
-    public Trade trading;
+    private Trade trading;
     public bool areTheyTrader;
 
     public string NPCName;
@@ -29,25 +29,29 @@ public class DialogTrigger : MonoBehaviour
     private bool playerInRange;
     private bool isFirstInteraction;
     private GameObject canvas;
-    public DialogManager dialogManager;
+    private GameObject Pcanvas;
+    private DialogManager dialogManager;
 
     private void Awake() {
         canvas = GameObject.Find("Canvas");
         journalManager = canvas.GetComponent<JournalManager>();
 
+        Pcanvas = GameObject.Find("PanelsCanvas");
         dialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
 
-        GameObject PopUp = canvas.transform.Find("popUp").gameObject;
+        GameObject PopUp = Pcanvas.transform.Find("popUp").gameObject;
         popUp = PopUp.GetComponent<TextMeshProUGUI>();
 
-        GameObject DialogText = canvas.transform.Find("DialogPanel/TextPanel/DialogText").gameObject;
+        GameObject DialogText = Pcanvas.transform.Find("DialogPanel/TextPanel/DialogText").gameObject;
         dialogText = DialogText.GetComponent<TextMeshProUGUI>();
 
-        GameObject NPCimage = canvas.transform.Find("DialogPanel/NPCImagePanel").gameObject;
+        GameObject NPCimage = Pcanvas.transform.Find("DialogPanel/NPCImagePanel").gameObject;
         NPCImage = NPCimage.GetComponent<Image>();
         
-        GameObject NPCName = canvas.transform.Find("DialogPanel/NPCName").gameObject;
+        GameObject NPCName = Pcanvas.transform.Find("DialogPanel/NPCName").gameObject;
         NPCNamePanel = NPCName.GetComponent<TextMeshProUGUI>();
+
+        trading = GameObject.Find("Managers/TradeManager").GetComponent<Trade>();
         
         visualCue.SetActive(false);
         playerInRange = false;
@@ -57,7 +61,8 @@ public class DialogTrigger : MonoBehaviour
     private void Update() {
         if (playerInRange && !dialogManager.dialogueIsPlaying)
         {
-            visualCue.SetActive(true);
+            if (isFirstInteraction) 
+                visualCue.SetActive(true);
             
             if (Input.GetKeyDown(KeyCode.I))
             {
@@ -81,7 +86,7 @@ public class DialogTrigger : MonoBehaviour
                         trading.OpenTradePanel();
                         return;
                     }
-                    if (subsequentInkJSON != null)
+                    else if (!areTheyTrader && subsequentInkJSON != null)
                     {
                         dialogManager.EnterDialogueMode(subsequentInkJSON);
                     }

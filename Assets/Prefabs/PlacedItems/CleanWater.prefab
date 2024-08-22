@@ -30,8 +30,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.97, y: -2.78, z: -0.13732408}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -146,7 +146,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.11863601, y: -0.10971773}
+  m_Offset: {x: -0.043465495, y: -0.3258314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -157,7 +157,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.066121, y: 3.6517246}
+  m_Size: {x: 2.0365322, y: 3.3698368}
   m_EdgeRadius: 0
 --- !u!114 &7336471501726071403
 MonoBehaviour:
@@ -172,7 +172,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickupText: {fileID: 6531510983725317952, guid: fa1ae2f3ef586bc319ea0cbb700a6fdd, type: 3}
-  itemButton: {fileID: 0}
   itemName: Clean Water
   quantity: 1
   sprite: {fileID: 21300000, guid: 9f223413f485cd8449f24937edf9cf9d, type: 3}
