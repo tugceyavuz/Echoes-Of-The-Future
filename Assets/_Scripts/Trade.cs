@@ -55,8 +55,8 @@ public class Trade : MonoBehaviour
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)){
-            Time.timeScale = 1;
             TradePanel.SetActive(false);
+            bgBlur.SetActive(false);
         }
 
         if (isTradeDone && !isItemReceived)
@@ -72,14 +72,11 @@ public class Trade : MonoBehaviour
         tradeApprove.SetActive(true);
         noMessage.SetActive(false);
         doneMessage.SetActive(false);
-        Time.timeScale = 0;
     }
 
     public void CloseTradePanel(){
-        Time.timeScale = 1;
         TradePanel.SetActive(false);
         bgBlur.SetActive(false);
-        Time.timeScale = 1;
     }
 
     public void ReceiveItem(){
@@ -89,6 +86,9 @@ public class Trade : MonoBehaviour
 
     public void TradeItem()
     {
+        Debug.Log(
+            amount
+        );
         // Get the Text component of the child object of the button to retrieve the item name
         if (GivenItemName == null)
         {
@@ -123,13 +123,10 @@ public class Trade : MonoBehaviour
 
         if (amount > 0)
         {
-            Time.timeScale = 1; 
             tradeApprove.SetActive(false);
             noMessage.SetActive(true);
             return;
-        }
-
-        Time.timeScale = 1;  
+        } 
         tradeApprove.SetActive(false);
         doneMessage.SetActive(true);
         isTradeDone = true;
