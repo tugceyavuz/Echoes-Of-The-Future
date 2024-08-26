@@ -86,9 +86,6 @@ public class Trade : MonoBehaviour
 
     public void TradeItem()
     {
-        Debug.Log(
-            amount
-        );
         // Get the Text component of the child object of the button to retrieve the item name
         if (GivenItemName == null)
         {
