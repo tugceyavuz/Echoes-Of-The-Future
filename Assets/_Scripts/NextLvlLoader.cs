@@ -37,8 +37,18 @@ public class NextLvlLoader : MonoBehaviour
         PopUpPanel.SetActive(false);
     }
 
+    public Animator transitionAnim;
+
+
     public void LoadNextLVL()
     {
+        StartCoroutine(LoadNext());
+    }
+
+    private IEnumerator LoadNext() 
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(levelToLoad);
     }
 

@@ -29,7 +29,7 @@ public class CinematicsDialog : MonoBehaviour
     private IEnumerator LoadNextLVL() 
     {
         transitionAnim.SetTrigger("End");
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(levelToLoad);
     }
 
