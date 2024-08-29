@@ -31,6 +31,7 @@ public class DialogTrigger : MonoBehaviour
     private GameObject canvas;
     private GameObject Pcanvas;
     private DialogManager dialogManager;
+    private List<GameObject> slots = new List<GameObject>();
 
     private void Awake() {
         canvas = GameObject.Find("Canvas");
@@ -56,6 +57,20 @@ public class DialogTrigger : MonoBehaviour
         visualCue.SetActive(false);
         playerInRange = false;
         isFirstInteraction = true;  // Initialize the flag for the first interaction
+
+        Transform parentTransform = GameObject.Find("Canvas").transform.Find("JournalPanel/NPCPanel/NPCList");
+
+        if (parentTransform != null)
+        {
+            foreach (Transform slot in parentTransform)
+            {
+                slots.Add(slot.gameObject);  // Add each child GameObject to the slots list
+            }
+        }
+        else
+        {
+            Debug.LogError("The specified path does not exist under the Canvas.");
+        }
     }
 
     private void Update() {
@@ -72,7 +87,7 @@ public class DialogTrigger : MonoBehaviour
                 // Check if it's the first interaction
                 if (isFirstInteraction)
                 {
-                    journalManager.AddItemNPC(NPCName, NPCSprite, NPCInfo);
+                    AddToJournal();
                     dialogManager.EnterDialogueMode(firstInkJSON);
                     isFirstInteraction = false;  // Set the flag to false after the first interaction
                 }
@@ -98,6 +113,18 @@ public class DialogTrigger : MonoBehaviour
         {
             visualCue.SetActive(false);
         }
+    }
+
+
+    private void AddToJournal(){
+        bool flag = false;
+        foreach (GameObject slot in slots)
+        {
+            if(NPCName == slot.GetComponent<NPCSlots>().ItemName.text)
+                flag = true;
+        }
+        if(!flag)
+            journalManager.AddItemNPC(NPCName, NPCSprite, NPCInfo);
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
