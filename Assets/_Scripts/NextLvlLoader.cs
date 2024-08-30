@@ -13,10 +13,13 @@ public class NextLvlLoader : MonoBehaviour
     private bool isPlayerInRange;
     private TextMeshProUGUI Text;
     private GameObject PopUpPanel;
+    private ComputerPuzzle isPuzzleDone;
     private void Awake() {
         Text = GameObject.Find("PanelsCanvas").transform.Find("popUp").gameObject.GetComponent<TextMeshProUGUI>();
         PopUpPanel = GameObject.Find("PanelsCanvas").transform.Find("PopUpPanel").gameObject;
         PopUpPanel.SetActive(false);
+
+        isPuzzleDone = GameObject.Find("Computer").GetComponent<ComputerPuzzle>();
     }
 
     void Update()
@@ -42,7 +45,7 @@ public class NextLvlLoader : MonoBehaviour
 
     public void LoadNextLVL()
     {
-        StartCoroutine(LoadNext());
+        if(isPuzzleDone.done) StartCoroutine(LoadNext());
     }
 
     private IEnumerator LoadNext() 

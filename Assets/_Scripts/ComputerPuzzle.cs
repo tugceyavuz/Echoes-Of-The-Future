@@ -21,7 +21,7 @@ public class ComputerPuzzle : MonoBehaviour
 
     private PlayerMovement player;
     public GameObject FinishScreen;
-    private bool done;
+    public bool done;
     
     private void Awake() {
         SceneCanvas = GameObject.Find("Canvas");

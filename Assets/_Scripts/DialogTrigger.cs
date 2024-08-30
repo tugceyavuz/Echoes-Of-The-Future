@@ -26,6 +26,7 @@ public class DialogTrigger : MonoBehaviour
     private TextMeshProUGUI popUp;
 
     private JournalManager journalManager;
+    private InventoryManager inventoryManager;
     private bool playerInRange;
     private bool isFirstInteraction;
     private GameObject canvas;
@@ -36,6 +37,7 @@ public class DialogTrigger : MonoBehaviour
     private void Awake() {
         canvas = GameObject.Find("Canvas");
         journalManager = canvas.GetComponent<JournalManager>();
+        inventoryManager = canvas.GetComponent<InventoryManager>();
 
         Pcanvas = GameObject.Find("PanelsCanvas");
         dialogManager = GameObject.Find("DialogManager").GetComponent<DialogManager>();
@@ -76,10 +78,15 @@ public class DialogTrigger : MonoBehaviour
     private void Update() {
         if (playerInRange && !dialogManager.dialogueIsPlaying)
         {
+            if (journalManager.JournalActivated || inventoryManager.menuActivated)
+            {
+                popUp.text = "";
+            }else popUp.text = "Press I to interact";
+
             if (isFirstInteraction) 
                 visualCue.SetActive(true);
             
-            if (Input.GetKeyDown(KeyCode.I))
+            if (Input.GetKeyDown(KeyCode.I) && !journalManager.JournalActivated && !inventoryManager.menuActivated)
             {
                 NPCNamePanel.text = NPCName;
                 NPCImage.sprite = NPCSprite;

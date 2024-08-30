@@ -11,6 +11,7 @@ public class NPCSlots : MonoBehaviour
 {
     private string itemName;
     public Sprite itemSprite;
+    public Sprite defaultItemSprite;
     public TextMeshProUGUI ItemName;
     public bool isFull;
     private string itemDescription;
@@ -31,9 +32,21 @@ public class NPCSlots : MonoBehaviour
 
     public void Pressed()
     {
-        itemDescriptionImage.sprite = itemSprite;
-        itemDescriptionNameText.text = itemName;
-        itemDescriptionText.text = itemDescription; 
+        if(itemSprite != null) 
+            itemDescriptionImage.sprite = itemSprite;
+        else if(itemSprite == null)
+            itemDescriptionImage.sprite = defaultItemSprite;
+
+        if(itemName != null) 
+            itemDescriptionNameText.text = itemName;
+        else if(itemName == null) 
+            itemDescriptionNameText.text = "Unknown";
+
+        if(itemDescription != null) 
+            itemDescriptionText.text = itemDescription; 
+        else if(itemDescription == null)
+            itemDescriptionText.text = "This NPC hasn't been interacted yet..."; 
+
     }
 
 }
