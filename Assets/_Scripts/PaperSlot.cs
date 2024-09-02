@@ -13,22 +13,25 @@ public class PaperSlot : MonoBehaviour
 
     public TextMeshProUGUI ItemName;
     public bool isFull;
-    private string itemDescription;
-    public TMP_Text itemDescriptionNameText;
-    public TMP_Text itemDescriptionText;
+    private Sprite itemImage;
+    public GameObject itemDisplayImage;
+    //public TMP_Text itemDescriptionNameText;
+    //public TMP_Text itemDescriptionText;
 
-    public void AddItem(string itemName, string itemDescription)
+    public void AddItem(string itemName, Sprite itemSprite)
     {
+        this.itemImage = itemSprite;
         ItemName.text = itemName;
         this.itemName = itemName;
-        this.itemDescription = itemDescription;
         isFull = true;
     }
 
     public void Pressed()
     {
-        itemDescriptionNameText.text = itemName;
-        itemDescriptionText.text = itemDescription;  
+        if(itemImage != null) {
+            itemDisplayImage.SetActive(true);
+            itemDisplayImage.GetComponent<Image>().sprite = itemImage;
+        }else itemDisplayImage.SetActive(false);
     }
 
 }

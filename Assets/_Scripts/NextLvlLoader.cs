@@ -13,13 +13,19 @@ public class NextLvlLoader : MonoBehaviour
     private bool isPlayerInRange;
     private TextMeshProUGUI Text;
     private GameObject PopUpPanel;
-    private ComputerPuzzle isPuzzleDone;
+    private ComputerPuzzle Puzzle;
+    private bool isPuzzleDone;
+
     private void Awake() {
         Text = GameObject.Find("PanelsCanvas").transform.Find("popUp").gameObject.GetComponent<TextMeshProUGUI>();
         PopUpPanel = GameObject.Find("PanelsCanvas").transform.Find("PopUpPanel").gameObject;
         PopUpPanel.SetActive(false);
 
-        isPuzzleDone = GameObject.Find("Computer").GetComponent<ComputerPuzzle>();
+        if(SceneManager.GetActiveScene().name != "LVL2") 
+        {    
+            Puzzle = GameObject.Find("Computer").GetComponent<ComputerPuzzle>();
+            isPuzzleDone = Puzzle.done;
+        }else isPuzzleDone = true;
     }
 
     void Update()
@@ -27,6 +33,7 @@ public class NextLvlLoader : MonoBehaviour
         // Check for the F key press when the player is in range
         if (isPlayerInRange && Input.GetKeyDown(KeyCode.F))
         {
+            if(SceneManager.GetActiveScene().name != "LVL2") isPuzzleDone = Puzzle.done;
             PopUpPanel.SetActive(true);
         }
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -45,7 +52,7 @@ public class NextLvlLoader : MonoBehaviour
 
     public void LoadNextLVL()
     {
-        if(isPuzzleDone.done) StartCoroutine(LoadNext());
+        if(isPuzzleDone) StartCoroutine(LoadNext());
     }
 
     private IEnumerator LoadNext() 

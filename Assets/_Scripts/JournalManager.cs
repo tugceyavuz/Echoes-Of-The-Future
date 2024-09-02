@@ -88,7 +88,7 @@ public class JournalManager : MonoBehaviour
     }
 
 
-    public bool AddItemPaper(string itemName, string itemDescription)
+    public bool AddItemPaper(string itemName, Sprite itemSprite)
     {
         // Add items to new slots
         for (int i = 0; i < itemSlot.Length; i++)
@@ -96,7 +96,7 @@ public class JournalManager : MonoBehaviour
             if (!itemSlot[i].isFull)
             {
 
-                itemSlot[i].AddItem(itemName, itemDescription);
+                itemSlot[i].AddItem(itemName, itemSprite);
                 return true;  
             }
         }

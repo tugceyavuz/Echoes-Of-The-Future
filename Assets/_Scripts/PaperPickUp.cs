@@ -11,7 +11,7 @@ public class PaperPickUp : MonoBehaviour
 
     public GameObject Allert;
     public string itemName;
-    public string itemDescription;
+    public Sprite itemSprite;
 
     private void Awake() {
         GameObject PopUp = GameObject.Find("Canvas").transform.Find("popUp").gameObject;
@@ -60,7 +60,7 @@ public class PaperPickUp : MonoBehaviour
 
 
     void PickUpItem() { 
-        bool isAdded = journalManager.AddItemPaper(itemName, itemDescription);
+        bool isAdded = journalManager.AddItemPaper(itemName,itemSprite);
         if (isAdded)
         {
             Destroy(gameObject);

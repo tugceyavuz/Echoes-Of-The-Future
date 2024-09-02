@@ -1171,6 +1171,10 @@ PrefabInstance:
       value: Air Cooler
       objectReference: {fileID: 0}
     - target: {fileID: 5418361577791724060, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3366aa11470e4e8a8214f6a12b97346, type: 3}
+    - target: {fileID: 5418361577791724060, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
       propertyPath: itemName
       value: Air Cooler
       objectReference: {fileID: 0}
@@ -1180,16 +1184,20 @@ PrefabInstance:
         heat from the CPU or GPU by blowing air over metal fins.
       objectReference: {fileID: 0}
     - target: {fileID: 6040889746941336262, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b3366aa11470e4e8a8214f6a12b97346, type: 3}
+    - target: {fileID: 6040889746941336262, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
       propertyPath: m_SortingOrder
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6497961191720396218, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 61.77
+      value: 62.11
       objectReference: {fileID: 0}
     - target: {fileID: 6497961191720396218, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.01
+      value: -3.98
       objectReference: {fileID: 0}
     - target: {fileID: 6497961191720396218, guid: 2d8ab3bc36cd29db18bf4a1529509eb1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -41289,6 +41297,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2984694720118764522, guid: 5da47733ad65ccff796c5fc85f3efaea, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b40834d3ac27fcd89ceeaa76f24cf88, type: 3}
+    - target: {fileID: 2984694720118764522, guid: 5da47733ad65ccff796c5fc85f3efaea, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
@@ -41336,6 +41348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Liquid Cooler
       objectReference: {fileID: 0}
+    - target: {fileID: 5326361325174521048, guid: 5da47733ad65ccff796c5fc85f3efaea, type: 3}
+      propertyPath: sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2b40834d3ac27fcd89ceeaa76f24cf88, type: 3}
     - target: {fileID: 5326361325174521048, guid: 5da47733ad65ccff796c5fc85f3efaea, type: 3}
       propertyPath: itemName
       value: Liquid Cooler
@@ -41426,7 +41442,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -108881,6 +108897,10 @@ PrefabInstance:
       propertyPath: levelToLoad
       value: LVL5
       objectReference: {fileID: 0}
+    - target: {fileID: 3619683847949421082, guid: a7b641d2268c0b732937965e7ffa165e, type: 3}
+      propertyPath: isPuzzleDone
+      value: 
+      objectReference: {fileID: 648523278}
     - target: {fileID: 3619683847949421082, guid: a7b641d2268c0b732937965e7ffa165e, type: 3}
       propertyPath: transitionAnim
       value: 
