@@ -145,7 +145,7 @@ Alright, be careful out there. I’ll see you outside the border doors.
 
 === explore_and_gather ===
 MARCUS:
-Good luck. Remember, you need to gather supplies before heading out. Once you’re ready, go through the west border doors, and I’ll meet you outside.
+Good luck. Remember, you need to gather supplies before heading out. Once you’re ready, go through the west border doors, and I’ll meet you outside. Oh and I found this Journal beside you, here take it. It looks important so don't forget to check it.
 
  *   [(Leave)]
     -> END

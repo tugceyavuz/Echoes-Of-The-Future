@@ -10,6 +10,7 @@ public class JournalManager : MonoBehaviour
     public GameObject[] stats;
     public GameObject BGBlur;
     public GameObject NPC;
+    public GameObject Dictionary;
     public GameObject NewsPapers;
     public bool JournalActivated;
     public TextMeshProUGUI Title;
@@ -59,6 +60,7 @@ public class JournalManager : MonoBehaviour
             }
             BGBlur.SetActive(true);
             Title.text = "JOURNAL";
+            Dictionary.SetActive(false);
             JournalUI.SetActive(true);
             NewsPapers.SetActive(true);
             PageTitle.text = "Collected Documents Page";
