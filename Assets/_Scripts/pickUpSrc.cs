@@ -5,9 +5,12 @@ using TMPro;
 
 public class pickUpSrc : MonoBehaviour
 {
+    private AudioSource audioSource;
     public TextMeshProUGUI pickupText;
     private bool isPlayerInRange;
     private InventoryManager inventoryManager;
+
+    private SpriteRenderer sr;
 
     public string itemName;
     public int quantity;
@@ -17,6 +20,8 @@ public class pickUpSrc : MonoBehaviour
     private void Awake() {
         GameObject PopUp = GameObject.Find("Canvas").transform.Find("popUp").gameObject;
         pickupText = PopUp.GetComponent<TextMeshProUGUI>();
+        audioSource = GetComponent<AudioSource>();
+        sr = GetComponent<SpriteRenderer>();
     }
     
     private void Start()
@@ -61,7 +66,9 @@ public class pickUpSrc : MonoBehaviour
         bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
         if (isAdded)
         {
-            Destroy(gameObject);
+            audioSource.Play();
+            sr.enabled = false;
+            Destroy(gameObject, audioSource.clip.length);
         }else
         {
             return;

@@ -28,6 +28,11 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public Image itemDescriptionImage;
     public TMP_Text itemDescriptionNameText;
     public TMP_Text itemDescriptionText;
+    private AudioSource audioSource;
+
+    private void Awake() {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
     {
@@ -89,7 +94,8 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         bool usable = inventoryManager.UseItem(itemName);
         
-        if(usable){    
+        if(usable){   
+            audioSource.Play(); 
             this.quantity -= 1;
             quantityText.text = this.quantity.ToString();
             if (this.quantity <= 0)
