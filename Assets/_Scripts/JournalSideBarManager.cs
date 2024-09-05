@@ -12,6 +12,7 @@ public class JournalSideBarManager : MonoBehaviour
 
     public void OpenNPC()
     {
+        FindObjectOfType<AudioManager>().Play("flip");
         if (NewsPapers.activeInHierarchy || Dictionary.activeInHierarchy)
         {
             NewsPapers.SetActive(false);
@@ -23,6 +24,7 @@ public class JournalSideBarManager : MonoBehaviour
 
     public void OpenNews()
     {
+        FindObjectOfType<AudioManager>().Play("flip");
         if (NPC.activeInHierarchy || Dictionary.activeInHierarchy)
         {
             NPC.SetActive(false);
@@ -34,6 +36,7 @@ public class JournalSideBarManager : MonoBehaviour
 
     public void OpenDictionary()
     {
+        FindObjectOfType<AudioManager>().Play("flip");
         if (NPC.activeInHierarchy || NewsPapers.activeInHierarchy)
         {
             NewsPapers.SetActive(false);

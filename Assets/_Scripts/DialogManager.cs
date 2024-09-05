@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using UnityEngine.SceneManagement;
 
 public class DialogManager : MonoBehaviour
 {
@@ -75,20 +76,28 @@ public class DialogManager : MonoBehaviour
         }
     }
 
-    public void EnterDialogueMode(TextAsset inkJSON) 
+    private bool IsWoman;
+
+    public void EnterDialogueMode(TextAsset inkJSON, bool IsWoman) 
     {
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
         Time.timeScale = 0; // Pause the game
-
+        this.IsWoman = IsWoman;
         ContinueStory();
     }
 
     private IEnumerator ExitDialogueMode() 
     {
         yield return new WaitForSeconds(0.1f);
-
+        if(SceneManager.GetActiveScene().name != "LVL1") {
+            if (!IsWoman)
+            {
+                FindObjectOfType<AudioManager>().Stop("MaleNPCTalk");
+            }else FindObjectOfType<AudioManager>().Stop("FemaleNPCTalk");
+            
+        }
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
@@ -98,6 +107,13 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue) 
         {
+            if(SceneManager.GetActiveScene().name != "LVL1") 
+            {
+                if (!IsWoman)
+            {
+                FindObjectOfType<AudioManager>().Play("MaleNPCTalk");
+            }else FindObjectOfType<AudioManager>().Play("FemaleNPCTalk");
+            }
             // set text for the current dialogue line
             dialogueText.text = currentStory.Continue();
             // display choices, if any, for this dialogue line

@@ -4048,25 +4048,17 @@ PrefabInstance:
       propertyPath: button2
       value: 
       objectReference: {fileID: 1631726247}
-    - target: {fileID: 356153537143895207, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
-      propertyPath: HWNames.Array.data[0]
-      value: Liquid Cooler
-      objectReference: {fileID: 0}
-    - target: {fileID: 356153537143895207, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
-      propertyPath: HWNames.Array.data[1]
-      value: Air Cooler
-      objectReference: {fileID: 0}
     - target: {fileID: 2223096054473200342, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
       propertyPath: m_Name
       value: Managers
       objectReference: {fileID: 0}
     - target: {fileID: 4232198815803968212, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 43.683327
+      value: -1.58
       objectReference: {fileID: 0}
     - target: {fileID: 4232198815803968212, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.30766863
+      value: -0.58
       objectReference: {fileID: 0}
     - target: {fileID: 4232198815803968212, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4099,14 +4091,6 @@ PrefabInstance:
     - target: {fileID: 4232198815803968212, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6191628029455771191, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -42.51
-      objectReference: {fileID: 0}
-    - target: {fileID: 6191628029455771191, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 10.6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -41649,7 +41633,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257049356}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ca7df12db1a6b955a9b33ccde899a6bd, type: 3}

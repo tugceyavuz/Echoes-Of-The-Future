@@ -13,6 +13,7 @@ public class pickUpSrc : MonoBehaviour
     private SpriteRenderer sr;
 
     public string itemName;
+    public bool IsDrink;
     public int quantity;
     public Sprite sprite;
     public string itemDescription;
@@ -63,7 +64,7 @@ public class pickUpSrc : MonoBehaviour
 
 
     void PickUpItem() { 
-        bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription);
+        bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, IsDrink);
         if (isAdded)
         {
             audioSource.Play();

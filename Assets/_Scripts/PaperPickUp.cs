@@ -63,6 +63,7 @@ public class PaperPickUp : MonoBehaviour
         bool isAdded = journalManager.AddItemPaper(itemName,itemSprite);
         if (isAdded)
         {
+            FindObjectOfType<AudioManager>().Play("paper");
             Destroy(gameObject);
         }else
         {

@@ -34,6 +34,8 @@ public class DialogTrigger : MonoBehaviour
     private DialogManager dialogManager;
     private List<GameObject> slots = new List<GameObject>();
 
+    public bool IsWoman;
+
     private void Awake() {
         canvas = GameObject.Find("Canvas");
         journalManager = canvas.GetComponent<JournalManager>();
@@ -95,14 +97,14 @@ public class DialogTrigger : MonoBehaviour
                 if (isFirstInteraction)
                 {
                     AddToJournal();
-                    dialogManager.EnterDialogueMode(firstInkJSON);
+                    dialogManager.EnterDialogueMode(firstInkJSON, IsWoman);
                     isFirstInteraction = false;  // Set the flag to false after the first interaction
                 }
                 else
                 {
                     if (areTheyTrader && trading.isTradeDone)
                     {
-                       dialogManager.EnterDialogueMode(traderInkJSON);
+                       dialogManager.EnterDialogueMode(traderInkJSON, IsWoman);
                         return;
                     }else if (areTheyTrader && !trading.isTradeDone){
                         trading.OpenTradePanel();
@@ -110,7 +112,7 @@ public class DialogTrigger : MonoBehaviour
                     }
                     else if (!areTheyTrader && subsequentInkJSON != null)
                     {
-                        dialogManager.EnterDialogueMode(subsequentInkJSON);
+                        dialogManager.EnterDialogueMode(subsequentInkJSON, IsWoman);
                     }
                    
                 }

@@ -41,6 +41,7 @@ public class InventoryManager : MonoBehaviour
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.Escape)){
+            if (InventoryMenu.activeInHierarchy) FindObjectOfType<AudioManager>().Play("Inventory");
             BGBlur.SetActive(false);
             Title.text = "";
             InventoryMenu.SetActive(false);
@@ -58,6 +59,7 @@ public class InventoryManager : MonoBehaviour
     // Update is called once per frame
     public void OpenInventory()
     {
+        FindObjectOfType<AudioManager>().Play("Inventory");
         if (InventoryMenu.activeInHierarchy)
         {
             BGBlur.SetActive(false);
@@ -99,7 +101,7 @@ public class InventoryManager : MonoBehaviour
         return false;
     }
 
-    public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public bool AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, bool IsDrink)
     {
         if (itemName == placeHW.HWNames[0])
         {
@@ -138,12 +140,12 @@ public class InventoryManager : MonoBehaviour
             {
                 if (quantity > ItemSlot.maxQuantity)
                 {
-                    itemSlot[i].AddItem(itemName, ItemSlot.maxQuantity, itemSprite, itemDescription);
+                    itemSlot[i].AddItem(itemName, ItemSlot.maxQuantity, itemSprite, itemDescription, IsDrink);
                     quantity -= ItemSlot.maxQuantity;
                 }
                 else
                 {
-                    itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription);
+                    itemSlot[i].AddItem(itemName, quantity, itemSprite, itemDescription, IsDrink);
                     return true;
                 }
             }

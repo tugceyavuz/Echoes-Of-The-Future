@@ -129,6 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickupText: {fileID: 6531510983725317952, guid: fa1ae2f3ef586bc319ea0cbb700a6fdd, type: 3}
   itemName: Medicine
+  IsDrink: 1
   quantity: 1
   sprite: {fileID: 21300000, guid: 3abdbd761237b0c5386ca15d5c62f0b6, type: 3}
   itemDescription: "A bottle of liquid medicine, the closest thing to a miracle in

@@ -29,6 +29,7 @@ public class PaperSlot : MonoBehaviour
     public void Pressed()
     {
         if(itemImage != null) {
+            FindObjectOfType<AudioManager>().Play("paper");
             itemDisplayImage.SetActive(true);
             itemDisplayImage.GetComponent<Image>().sprite = itemImage;
         }else itemDisplayImage.SetActive(false);

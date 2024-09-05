@@ -24,6 +24,10 @@ public class JournalManager : MonoBehaviour
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Escape)){
+            if (JournalUI.activeInHierarchy)
+            {
+                FindObjectOfType<AudioManager>().Play("closeBook");
+            }
             Time.timeScale = 1;
             JournalUI.SetActive(false);
             BGBlur.SetActive(false);
@@ -41,6 +45,7 @@ public class JournalManager : MonoBehaviour
     {
         if (JournalUI.activeInHierarchy)
         {
+            FindObjectOfType<AudioManager>().Play("closeBook");
             Time.timeScale = 1;
             JournalUI.SetActive(false);
             BGBlur.SetActive(false);
@@ -54,6 +59,7 @@ public class JournalManager : MonoBehaviour
         }
         else if (!JournalUI.activeInHierarchy)
         {
+            FindObjectOfType<AudioManager>().Play("openBook");
             if (InventoryUI.activeInHierarchy)
             {
                 InventoryUI.SetActive(false);

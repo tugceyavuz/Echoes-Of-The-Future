@@ -17,7 +17,7 @@ public class CinematicsDialog : MonoBehaviour
     private void Update() {
         if (!finished)
         {
-            dialogManager.EnterDialogueMode(InkJSON);
+            dialogManager.EnterDialogueMode(InkJSON, false);
             finished = true;
         }
         if(!dialogManager.dialogueIsPlaying){

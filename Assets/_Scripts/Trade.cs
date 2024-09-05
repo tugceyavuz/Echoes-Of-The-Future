@@ -15,6 +15,7 @@ public class Trade : MonoBehaviour
     public int amount;
     private List<GameObject> slots = new List<GameObject>();
     public string GivenItemName;
+    public bool IsDrink;
     public string itemName;
     public int quantity;
     public Sprite itemSprite;
@@ -80,7 +81,7 @@ public class Trade : MonoBehaviour
     }
 
     public void ReceiveItem(){
-        inventoryManager.AddItem(itemName, quantity, itemSprite, itemDescription);
+        inventoryManager.AddItem(itemName, quantity, itemSprite, itemDescription, IsDrink);
     }
 
 

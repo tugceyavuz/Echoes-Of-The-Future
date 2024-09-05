@@ -29,12 +29,13 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     public TMP_Text itemDescriptionNameText;
     public TMP_Text itemDescriptionText;
     private AudioSource audioSource;
+    private bool IsDrink;
 
     private void Awake() {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription)
+    public void AddItem(string itemName, int quantity, Sprite itemSprite, string itemDescription, bool IsDrink)
     {
         if (isFull && this.itemName == itemName)
         {
@@ -42,6 +43,7 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
         }
         else
         {
+            this.IsDrink = IsDrink;
             this.itemName = itemName;
             this.itemSprite = itemSprite;
             this.itemDescription = itemDescription;
@@ -94,8 +96,12 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
     {
         bool usable = inventoryManager.UseItem(itemName);
         
-        if(usable){   
-            audioSource.Play(); 
+        if(usable){  
+            if (!IsDrink)
+            {
+                audioSource.Play();
+            }else FindObjectOfType<AudioManager>().Play("drink");
+             
             this.quantity -= 1;
             quantityText.text = this.quantity.ToString();
             if (this.quantity <= 0)
