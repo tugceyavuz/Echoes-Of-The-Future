@@ -28,7 +28,7 @@ public class DialogTrigger : MonoBehaviour
     private JournalManager journalManager;
     private InventoryManager inventoryManager;
     private bool playerInRange;
-    private bool isFirstInteraction;
+    public bool isFirstInteraction;
     private GameObject canvas;
     private GameObject Pcanvas;
     private DialogManager dialogManager;

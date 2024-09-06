@@ -1,5 +1,6 @@
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true; // To check which direction the player is facing
 
     public float overallScore;
+    private bool isTalked;
 
     void Start()
     {
@@ -31,11 +33,14 @@ public class PlayerMovement : MonoBehaviour
 
         // Check if the player is moving and update the animator
         if (moveInput != Vector2.zero)
-        {
-            animator.SetBool("isMoving", true);
+        {  
+            if (!isTalked){if(!FindObjectOfType<AudioManager>().IsPlaying("walk")) FindObjectOfType<AudioManager>().Play("walk");
+            animator.SetBool("isMoving", true);}
         }
         else
         {
+            isTalked = GameObject.Find("NPCMarcus").GetComponent<DialogTrigger>().isFirstInteraction;
+            if(FindObjectOfType<AudioManager>().IsPlaying("walk")) FindObjectOfType<AudioManager>().Stop("walk");
             animator.SetBool("isMoving", false);
         }
 
@@ -53,7 +58,8 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         // Move the player based on input by setting the velocity
-        rb.velocity = moveInput * moveSpeed;
+        if (!isTalked)
+            rb.velocity = moveInput * moveSpeed;
     }
 
     void Flip()

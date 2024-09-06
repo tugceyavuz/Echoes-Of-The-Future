@@ -84,25 +84,25 @@ MonoBehaviour:
     loop: 0
     clip: {fileID: 8300000, guid: 2ddb608240e5b8b16b79aaa4db8f43c0, type: 3}
     source: {fileID: 0}
-    volume: 0.642
+    volume: 0.5
     pitch: 1
   - name: FemaleNPCTalk
     loop: 0
     clip: {fileID: 8300000, guid: f850afb5e297190f9afc900b9f506dc4, type: 3}
     source: {fileID: 0}
-    volume: 0.642
-    pitch: 1
+    volume: 0.5
+    pitch: 1.17
   - name: walk
     loop: 0
-    clip: {fileID: 8300000, guid: 7b7b656ac8d43e86da976ac600050e02, type: 3}
+    clip: {fileID: 8300000, guid: b0ced928134535338aec922c48963811, type: 3}
     source: {fileID: 0}
-    volume: 0.642
+    volume: 0.25
     pitch: 1
   - name: paper
     loop: 0
     clip: {fileID: 8300000, guid: 95b31376e203c86fa8117f7224439df0, type: 3}
     source: {fileID: 0}
-    volume: 0.642
+    volume: 0.313
     pitch: 1
   - name: theme
     loop: 1
@@ -120,25 +120,25 @@ MonoBehaviour:
     loop: 0
     clip: {fileID: 8300000, guid: ef8f55c2660f185ae8d28e72e2e510dd, type: 3}
     source: {fileID: 0}
-    volume: 0.642
-    pitch: 1
+    volume: 0.164
+    pitch: 0.82
   - name: closeBook
     loop: 0
     clip: {fileID: 8300000, guid: 4bdbdae02404f537ab2fc7569bca67f4, type: 3}
     source: {fileID: 0}
-    volume: 0.642
-    pitch: 1
+    volume: 0.117
+    pitch: 0.85
   - name: Inventory
     loop: 0
-    clip: {fileID: 8300000, guid: fc6301e388d32ef64ac6c111b0afbdbe, type: 3}
+    clip: {fileID: 8300000, guid: 5396cb7ef7e84779783f619ece4a9d09, type: 3}
     source: {fileID: 0}
-    volume: 0.703
+    volume: 0.241
     pitch: 1
   - name: flip
     loop: 0
     clip: {fileID: 8300000, guid: 404c90c18d803f72091fdc2f038ef91c, type: 3}
     source: {fileID: 0}
-    volume: 0.703
+    volume: 0.234
     pitch: 1
 --- !u!1001 &2620319862473708227
 PrefabInstance:

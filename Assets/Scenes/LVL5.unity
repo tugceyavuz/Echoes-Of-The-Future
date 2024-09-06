@@ -1414,6 +1414,14 @@ PrefabInstance:
       propertyPath: HWNames.Array.data[1]
       value: CPU A
       objectReference: {fileID: 0}
+    - target: {fileID: 518053867542773832, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
+      propertyPath: sounds.Array.data[4].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: b2adcc8260f426f04b57afa708cf4128, type: 3}
+    - target: {fileID: 518053867542773832, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
+      propertyPath: sounds.Array.data[4].volume
+      value: 0.582
+      objectReference: {fileID: 0}
     - target: {fileID: 2223096054473200342, guid: de28f67f3dc839dec8e90f543abf86ff, type: 3}
       propertyPath: m_Name
       value: Managers
