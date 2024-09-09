@@ -140,6 +140,12 @@ MonoBehaviour:
     source: {fileID: 0}
     volume: 0.234
     pitch: 1
+  - name: Computer
+    loop: 0
+    clip: {fileID: 8300000, guid: a6df985f63b37431a9c89a56b0932af0, type: 3}
+    source: {fileID: 0}
+    volume: 0.319
+    pitch: 1
 --- !u!1001 &2620319862473708227
 PrefabInstance:
   m_ObjectHideFlags: 0

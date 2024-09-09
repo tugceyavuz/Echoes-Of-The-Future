@@ -17,7 +17,14 @@ Would you look at that… I never thought I’d see this place like this again. 
 === explain_past_forest ===
 
 MARCUS:
-After the fall, this place was hit hard. Pollution, wildfires, and the collapse of ecosystems turned it into a wasteland. No birds, no insects, just silence and death. I used to walk these paths when I was younger, back when it was alive with wildlife. Seeing it like that, it felt like losing a part of myself. But now… maybe we didn’t lose everything. Nature’s got a way of healing, given time. And seeing this… it reminds me that we’ve got to keep pushing forward. There’s still something worth fighting for.
+After the fall, this place was hit hard. Pollution, wildfires, and the collapse of ecosystems turned it into a wasteland. No birds, no insects, just silence and death. I used to walk these paths when I was younger, back when it was alive with wildlife. Seeing it like that, it felt like losing a part of myself. 
+
++   [(Continue)]
+    -> explain_past_forest_cont
+    
+=== explain_past_forest_cont ===
+MARCUS:
+But now… maybe we didn’t lose everything. Nature’s got a way of healing, given time. And seeing this… it reminds me that we’ve got to keep pushing forward. There’s still something worth fighting for.
 
 *   ["I agree. Let’s make sure we do our part."]
     -> explain_mission_forest

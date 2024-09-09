@@ -33,15 +33,49 @@ public class PlayerMovement : MonoBehaviour
 
         // Check if the player is moving and update the animator
         if (moveInput != Vector2.zero)
-        {  
-            if (!isTalked){if(!FindObjectOfType<AudioManager>().IsPlaying("walk")) FindObjectOfType<AudioManager>().Play("walk");
-            animator.SetBool("isMoving", true);}
+        {
+            if (!isTalked)
+            {
+                if (!FindObjectOfType<AudioManager>().IsPlaying("walk"))
+                    FindObjectOfType<AudioManager>().Play("walk");
+                
+                animator.SetBool("isMoving", true);
+
+                // Reset all directional animation bools first
+                animator.SetBool("isWalkingUp", false);
+                animator.SetBool("isWalkingDown", false);
+                animator.SetBool("isWalkingRight", false);
+
+                // Set animations for direction
+                if (moveY > 0)
+                {
+                    animator.SetBool("isWalkingUp", true);
+                }
+                else if (moveY < 0)
+                {
+                    animator.SetBool("isWalkingDown", true);
+                }
+                else if (moveX > 0)
+                {
+                    animator.SetBool("isWalkingRight", true);
+                }
+                else if (moveX < 0)
+                {
+                    animator.SetBool("isWalkingRight", true); // Trigger right animation but flip
+                }
+            }
         }
         else
         {
-            isTalked = GameObject.Find("NPCMarcus").GetComponent<DialogTrigger>().isFirstInteraction;
-            if(FindObjectOfType<AudioManager>().IsPlaying("walk")) FindObjectOfType<AudioManager>().Stop("walk");
+            // Stop all movement animations when player stops moving
             animator.SetBool("isMoving", false);
+            animator.SetBool("isWalkingUp", false);
+            animator.SetBool("isWalkingDown", false);
+            animator.SetBool("isWalkingRight", false);
+
+            isTalked = GameObject.Find("NPCMarcus").GetComponent<DialogTrigger>().isFirstInteraction;
+            if (FindObjectOfType<AudioManager>().IsPlaying("walk"))
+                FindObjectOfType<AudioManager>().Stop("walk");
         }
 
         // Flip the player sprite based on horizontal movement
@@ -73,7 +107,8 @@ public class PlayerMovement : MonoBehaviour
         transform.localScale = theScale;
     }
 
-    public float CalculateScore(){
+    public float CalculateScore()
+    {
         float average = 100 * overallScore / 300;
         return average;
     }

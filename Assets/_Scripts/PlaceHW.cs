@@ -141,6 +141,7 @@ public class PlaceHW : MonoBehaviour
     
                 withHW.SetActive(false);
                 HWPlaced.SetActive(true);
+                FindObjectOfType<AudioManager>().Play("Computer");
                 inventoryManager.isItHW1 = false;
                 inventoryManager.isItHW2 = false;
                 isHWIcluded = true;
