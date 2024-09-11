@@ -73,7 +73,7 @@ public class PlaceHW : MonoBehaviour
 
 
     private void Update() {
-        if (playerInRange && Input.GetKeyDown(KeyCode.C))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             BGBlur.SetActive(true);
             PopUpPanel.SetActive(true);
@@ -103,7 +103,7 @@ public class PlaceHW : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            popup.text = "Press C to interact";
+            popup.text = "Press F to interact";
         }
     }
 

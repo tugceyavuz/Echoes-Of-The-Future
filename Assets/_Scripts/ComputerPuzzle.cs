@@ -19,7 +19,7 @@ public class ComputerPuzzle : MonoBehaviour
     public PlaceHW placedHW;
     public string[] HWNames;
 
-    private PlayerMovement player;
+    private PlayerEndingStats playerEndingStats;
     public GameObject FinishScreen;
     public bool done;
     
@@ -28,7 +28,7 @@ public class ComputerPuzzle : MonoBehaviour
         GameObject PopUp = GameObject.Find("Canvas").transform.Find("popUp").gameObject;
         popup = PopUp.GetComponent<TextMeshProUGUI>();
 
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        playerEndingStats = GameObject.Find("PlayerEndingStats").GetComponent<PlayerEndingStats>();
     }
 
     private void Start() {
@@ -37,7 +37,7 @@ public class ComputerPuzzle : MonoBehaviour
     }
 
     private void Update() {
-        if (playerInRange && Input.GetKeyDown(KeyCode.C))
+        if (playerInRange && Input.GetKeyDown(KeyCode.F))
         {
             SceneCanvas.SetActive(false);
             ComputerCanvas.SetActive(true);
@@ -63,7 +63,7 @@ public class ComputerPuzzle : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerInRange = true;
-            popup.text = "Press C to interact";
+            popup.text = "Press F to interact";
         }
     }
 
@@ -102,8 +102,8 @@ public class ComputerPuzzle : MonoBehaviour
             swScore = 100;
         }
         
-        player.overallScore += (hwScore + swScore )/ 2;
+        playerEndingStats.palyerOverallScore += (hwScore + swScore )/ 2;
         done = true;
-        Debug.Log(player.overallScore);
+        Debug.Log(playerEndingStats.palyerOverallScore);
     }
 }

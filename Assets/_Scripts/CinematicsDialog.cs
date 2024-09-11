@@ -12,6 +12,14 @@ public class CinematicsDialog : MonoBehaviour
     public Animator transitionAnim;
 
     private void Start() {
+        if (GameObject.Find("Canvas") != null)
+        {
+            Destroy(GameObject.Find("Canvas"));
+        }
+        if (GameObject.Find("Player") != null)
+        {
+            Destroy(GameObject.Find("Player"));
+        }
     }
 
     private void Update() {

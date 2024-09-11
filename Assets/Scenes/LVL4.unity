@@ -3916,6 +3916,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 71b3e631891a5647f9663bd2c8e7cdc1, type: 3}
     - target: {fileID: 4502273419560227709, guid: dcf8192621ab349a18131e249a80bdb1, type: 3}
+      propertyPath: NPCSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 71b3e631891a5647f9663bd2c8e7cdc1, type: 3}
+    - target: {fileID: 4502273419560227709, guid: dcf8192621ab349a18131e249a80bdb1, type: 3}
       propertyPath: firstInkJSON
       value: 
       objectReference: {fileID: 4900000, guid: 8c98dbdbceb954c47b8655dd403a7233, type: 3}

@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator; // Reference to the Animator component
     private bool isFacingRight = true; // To check which direction the player is facing
 
-    public float overallScore;
+    
     private bool isTalked;
 
     void Start()
@@ -19,7 +19,6 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // Get the Animator component attached to the player
         animator = GetComponent<Animator>();
-        overallScore = 0;
     }
 
     void Update()
@@ -105,11 +104,5 @@ public class PlayerMovement : MonoBehaviour
         Vector3 theScale = transform.localScale;
         theScale.x *= -1;
         transform.localScale = theScale;
-    }
-
-    public float CalculateScore()
-    {
-        float average = 100 * overallScore / 300;
-        return average;
     }
 }

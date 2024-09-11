@@ -14,7 +14,7 @@ public class ItemSO : ScriptableObject
     };
     
     public bool UseItem(){
-        PlayerStatsManager playerStats = GameObject.Find("Player").GetComponent<PlayerStatsManager>();
+        PlayerStatsManager playerStats = GameObject.Find("PlayerEndingStats").GetComponent<PlayerStatsManager>();
         switch (statToChange)
         {
             case StatToChange.health:

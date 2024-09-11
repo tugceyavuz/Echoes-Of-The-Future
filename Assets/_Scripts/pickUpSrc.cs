@@ -67,9 +67,8 @@ public class pickUpSrc : MonoBehaviour
         bool isAdded = inventoryManager.AddItem(itemName, quantity, sprite, itemDescription, IsDrink);
         if (isAdded)
         {
-            audioSource.Play();
-            sr.enabled = false;
-            Destroy(gameObject, audioSource.clip.length);
+            FindObjectOfType<AudioManager>().Play("pickUp");
+            Destroy(gameObject);
         }else
         {
             return;

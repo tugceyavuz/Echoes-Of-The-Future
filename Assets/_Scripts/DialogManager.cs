@@ -22,17 +22,21 @@ public class DialogManager : MonoBehaviour
     private static DialogManager instance;
     private GameObject canvas;
 
+    private GoingToEndCinematic endCinematic;
+
     private void Awake() 
     {
         instance = this;
 
         canvas = GameObject.Find("PanelsCanvas");
+
         dialoguePanel = canvas.transform.Find("DialogPanel").gameObject;
 
         GameObject DialogText = canvas.transform.Find("DialogPanel/TextPanel/DialogText").gameObject;
         dialogueText = DialogText.GetComponent<TextMeshProUGUI>();
 
         Transform parentTransform = canvas.transform.Find("DialogPanel/OptionsPanel");
+
 
         choices = new GameObject[parentTransform.childCount];
 
@@ -80,6 +84,25 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON, bool IsWoman) 
     {
+        if (SceneManager.GetActiveScene().name == "LVL5")
+        {
+            endCinematic = GameObject.Find("end").GetComponent<GoingToEndCinematic>();
+            if(endCinematic.finished){
+                dialoguePanel = canvas.transform.Find("DialogPanelForMC").gameObject;
+
+                GameObject DialogText = canvas.transform.Find("DialogPanelForMC/TextPanel/DialogText").gameObject;
+                dialogueText = DialogText.GetComponent<TextMeshProUGUI>();
+
+                Transform parentTransform = canvas.transform.Find("DialogPanelForMC/OptionsPanel");
+                choices = new GameObject[parentTransform.childCount];
+
+                // Loop through each child and assign to the array
+                for (int i = 0; i < parentTransform.childCount; i++)
+                {
+                    choices[i] = parentTransform.GetChild(i).gameObject;
+                }
+            }
+        }
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -91,7 +114,7 @@ public class DialogManager : MonoBehaviour
     private IEnumerator ExitDialogueMode() 
     {
         yield return new WaitForSeconds(0.1f);
-        if(SceneManager.GetActiveScene().name != "LVL1") {
+        if(SceneManager.GetActiveScene().name != "LVL1" && SceneManager.GetActiveScene().name != "LVL6") {
             if (!IsWoman)
             {
                 FindObjectOfType<AudioManager>().Stop("MaleNPCTalk");
@@ -107,7 +130,7 @@ public class DialogManager : MonoBehaviour
     {
         if (currentStory.canContinue) 
         {
-            if(SceneManager.GetActiveScene().name != "LVL1") 
+            if(SceneManager.GetActiveScene().name != "LVL1" && SceneManager.GetActiveScene().name != "LVL6") 
             {
                 if (!IsWoman)
             {

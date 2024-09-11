@@ -83,12 +83,12 @@ public class DialogTrigger : MonoBehaviour
             if (journalManager.JournalActivated || inventoryManager.menuActivated)
             {
                 popUp.text = "";
-            }else popUp.text = "Press I to interact";
+            }else popUp.text = "Press F to interact";
 
             if (isFirstInteraction) 
                 visualCue.SetActive(true);
             
-            if (Input.GetKeyDown(KeyCode.I) && !journalManager.JournalActivated && !inventoryManager.menuActivated)
+            if (Input.GetKeyDown(KeyCode.F) && !journalManager.JournalActivated && !inventoryManager.menuActivated)
             {
                 NPCNamePanel.text = NPCName;
                 NPCImage.sprite = NPCSprite;

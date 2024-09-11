@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 2592077124028055038}
   - component: {fileID: 2874278826658491243}
   - component: {fileID: 6124622502557711934}
-  - component: {fileID: 4680334173238347434}
   - component: {fileID: 1624578560660117192}
   m_Layer: 0
   m_Name: Player
@@ -231,26 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 935d2914c50a5dcfb87fe0e17fefa8cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 8
-  overallScore: 0
---- !u!114 &4680334173238347434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5248622562572150467}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 612c502fe871af8b98e0080fcea20826, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 100
-  maxHunger: 100
-  maxThirst: 100
-  currentHealth: 0
-  currentHunger: 0
-  currentThirst: 0
+  moveSpeed: 6
 --- !u!114 &1624578560660117192
 MonoBehaviour:
   m_ObjectHideFlags: 0
