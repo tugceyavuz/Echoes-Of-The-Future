@@ -23,6 +23,13 @@ public class JournalManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            OpenJournal();
+        }
+
+
         if(Input.GetKeyDown(KeyCode.Escape)){
             if (JournalUI.activeInHierarchy)
             {

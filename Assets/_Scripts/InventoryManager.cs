@@ -40,6 +40,11 @@ public class InventoryManager : MonoBehaviour
     }
 
     private void Update() {
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            OpenInventory();
+        }
+
         if(Input.GetKeyDown(KeyCode.Escape)){
             if (InventoryMenu.activeInHierarchy) FindObjectOfType<AudioManager>().Play("Inventory");
             BGBlur.SetActive(false);
@@ -62,6 +67,7 @@ public class InventoryManager : MonoBehaviour
         FindObjectOfType<AudioManager>().Play("Inventory");
         if (InventoryMenu.activeInHierarchy)
         {
+            Time.timeScale = 1;
             BGBlur.SetActive(false);
             Title.text = "";
             InventoryMenu.SetActive(false);
@@ -86,6 +92,7 @@ public class InventoryManager : MonoBehaviour
                 stats[i].SetActive(true);
             }
             menuActivated = true;
+            Time.timeScale = 0;
         }
     }
 
