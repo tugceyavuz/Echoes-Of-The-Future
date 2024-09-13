@@ -90,6 +90,37 @@ public class ItemSlot : MonoBehaviour, IPointerClickHandler
 
     }
 
+    public void UpdateSlotUI()
+    {
+        // Update the quantity text
+        if (quantity > 0)
+        {
+            quantityText.text = quantity.ToString();
+            quantityText.enabled = true;
+        }
+        else
+        {
+            quantityText.enabled = false;
+        }
+
+        // Update the item sprite if it's set
+        if (itemSprite != null)
+        {
+            itemImage.sprite = itemSprite;
+            itemImage.enabled = true;
+        }
+        else
+        {
+            itemImage.sprite = defaultImage;
+            itemImage.enabled = true;
+        }
+
+        // Update the item description text and image
+        itemDescriptionNameText.text = itemName;
+        itemDescriptionText.text = itemDescription;
+        itemDescriptionImage.sprite = itemSprite;
+    }
+
     private bool isClickable = false;
 
     private void OnRightClick()

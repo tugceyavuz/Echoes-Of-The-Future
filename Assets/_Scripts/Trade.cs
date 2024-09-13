@@ -100,7 +100,6 @@ public class Trade : MonoBehaviour
             GameObject slot = slots[i];
 
             ItemSlot item = slot.GetComponent<ItemSlot>();
-            Debug.Log(amount);
 
             if (amount <= 0)
             {
@@ -116,6 +115,8 @@ public class Trade : MonoBehaviour
                 }
                 else{
                     item.quantity -= amount;
+                    item.UpdateSlotUI();
+                    amount = 0;
                 }
             }
         }
