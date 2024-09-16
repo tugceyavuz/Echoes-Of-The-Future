@@ -27,7 +27,7 @@ public class GoingToEndCinematic : MonoBehaviour
     {
         if (isPuzzleDone)
         {
-            canvas.SetActive(false);
+            Destroy(GameObject.Find("Canvas"));
             if (!finished)
             {
                 finished = true;

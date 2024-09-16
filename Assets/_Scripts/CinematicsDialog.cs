@@ -12,12 +12,9 @@ public class CinematicsDialog : MonoBehaviour
     public Animator transitionAnim;
 
     private void Start() {
-        if (GameObject.Find("Canvas") != null)
+        if (SceneManager.GetActiveScene().name == "LVL6")
         {
-            Destroy(GameObject.Find("Canvas"));
-        }
-        if (GameObject.Find("Player") != null)
-        {
+            if(GameObject.Find("Canvas") != null) Destroy(GameObject.Find("Canvas"));
             Destroy(GameObject.Find("Player"));
         }
     }
