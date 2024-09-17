@@ -49,9 +49,11 @@ public class ComputerPuzzle : MonoBehaviour
             }
         }
         if(Input.GetKeyDown(KeyCode.Escape)){
-            Time.timeScale = 1;
-            SceneCanvas.SetActive(true);
-            ComputerCanvas.SetActive(false);
+            if(ComputerCanvas.activeInHierarchy){
+                Time.timeScale = 1;
+                SceneCanvas.SetActive(true);
+                ComputerCanvas.SetActive(false);
+            }
         }
     }
 

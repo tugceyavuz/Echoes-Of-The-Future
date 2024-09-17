@@ -46,14 +46,17 @@ public class InventoryManager : MonoBehaviour
         }
 
         if(Input.GetKeyDown(KeyCode.Escape)){
-            if (InventoryMenu.activeInHierarchy) FindObjectOfType<AudioManager>().Play("Inventory");
-            BGBlur.SetActive(false);
-            Title.text = "";
-            InventoryMenu.SetActive(false);
-            menuActivated = false;
-            for (int i = 0; i < 3; i++)
-            {
-                stats[i].SetActive(false);
+            if (InventoryMenu.activeInHierarchy) {
+                Time.timeScale = 1;
+                FindObjectOfType<AudioManager>().Play("Inventory");
+                BGBlur.SetActive(false);
+                Title.text = "";
+                InventoryMenu.SetActive(false);
+                menuActivated = false;
+                for (int i = 0; i < 3; i++)
+                {
+                    stats[i].SetActive(false);
+                }
             }
         }else
         {

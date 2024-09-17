@@ -34,17 +34,17 @@ public class JournalManager : MonoBehaviour
             if (JournalUI.activeInHierarchy)
             {
                 FindObjectOfType<AudioManager>().Play("closeBook");
+                Time.timeScale = 1;
+                JournalUI.SetActive(false);
+                BGBlur.SetActive(false);
+                JournalActivated = false;
+                Title.text = "";
+                for (int i = 0; i < 3; i++)
+                {
+                    stats[i].SetActive(false);
+                }
+                PageTitle.text = "";
             }
-            Time.timeScale = 1;
-            JournalUI.SetActive(false);
-            BGBlur.SetActive(false);
-            JournalActivated = false;
-            Title.text = "";
-            for (int i = 0; i < 3; i++)
-            {
-                stats[i].SetActive(false);
-            }
-            PageTitle.text = "";
         }
     }
 

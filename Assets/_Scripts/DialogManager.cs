@@ -21,6 +21,7 @@ public class DialogManager : MonoBehaviour
 
     private static DialogManager instance;
     private GameObject canvas;
+    private GameObject Mcanvas;
 
     private GoingToEndCinematic endCinematic;
 
@@ -29,6 +30,7 @@ public class DialogManager : MonoBehaviour
         instance = this;
 
         canvas = GameObject.Find("PanelsCanvas");
+        Mcanvas = GameObject.Find("Canvas");
 
         dialoguePanel = canvas.transform.Find("DialogPanel").gameObject;
 
@@ -84,6 +86,7 @@ public class DialogManager : MonoBehaviour
 
     public void EnterDialogueMode(TextAsset inkJSON, bool IsWoman) 
     {
+        if (Mcanvas != null) Mcanvas.SetActive(false);
         if (SceneManager.GetActiveScene().name == "LVL5")
         {
             endCinematic = GameObject.Find("end").GetComponent<GoingToEndCinematic>();
@@ -124,6 +127,7 @@ public class DialogManager : MonoBehaviour
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
         dialogueText.text = "";
+        if (Mcanvas != null) Mcanvas.SetActive(true);
     }
 
     private void ContinueStory() 

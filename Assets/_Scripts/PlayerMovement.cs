@@ -10,7 +10,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator; // Reference to the Animator component
     private bool isFacingRight = true; // To check which direction the player is facing
 
-    
+    private GameObject canvas;
     private bool isTalked;
 
     void Start()
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         // Get the Animator component attached to the player
         animator = GetComponent<Animator>();
+        canvas = GameObject.Find("Canvas");
     }
 
     void Update()
@@ -63,9 +64,11 @@ public class PlayerMovement : MonoBehaviour
                     animator.SetBool("isWalkingRight", true); // Trigger right animation but flip
                 }
             }
+            else canvas.SetActive(false);
         }
         else
         {
+            if (isTalked) canvas.SetActive(false);
             // Stop all movement animations when player stops moving
             animator.SetBool("isMoving", false);
             animator.SetBool("isWalkingUp", false);

@@ -92,10 +92,12 @@ public class PlaceHW : MonoBehaviour
             Time.timeScale = 0;
         }
         if(Input.GetKeyDown(KeyCode.Escape)){
-            Time.timeScale = 1;
-            withHW.SetActive(false);
-            PopUpPanel.SetActive(false);
-            BGBlur.SetActive(false);
+            if(PopUpPanel.activeInHierarchy){
+                Time.timeScale = 1;
+                withHW.SetActive(false);
+                PopUpPanel.SetActive(false);
+                BGBlur.SetActive(false);
+            }
         }
     }
     

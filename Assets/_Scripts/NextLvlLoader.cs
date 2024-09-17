@@ -35,15 +35,18 @@ public class NextLvlLoader : MonoBehaviour
         {
             if(SceneManager.GetActiveScene().name != "LVL2") isPuzzleDone = Puzzle.done;
             PopUpPanel.SetActive(true);
+            Time.timeScale = 0;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && PopUpPanel.activeInHierarchy)
         {
+            Time.timeScale = 1;
             PopUpPanel.SetActive(false);
         }
     }
 
     public void ClosePopUp()
     {
+        Time.timeScale = 1;
         PopUpPanel.SetActive(false);
     }
 
@@ -57,6 +60,7 @@ public class NextLvlLoader : MonoBehaviour
 
     private IEnumerator LoadNext() 
     {
+        Time.timeScale = 1;
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(2.0f);
         SceneManager.LoadScene(levelToLoad);
