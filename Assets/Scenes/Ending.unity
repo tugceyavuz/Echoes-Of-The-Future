@@ -3044,7 +3044,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Developed by \nH. Tugce Yavuz\n\nCharacter Designs: mnmiko"
+  m_text: "Developed by \nH. Tugce Yavuz\n\nCharacter Designs: Febria Salim"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 756502778b4405c4aa422a467f9144a4, type: 2}
   m_sharedMaterial: {fileID: -183345915074401075, guid: 756502778b4405c4aa422a467f9144a4, type: 2}
