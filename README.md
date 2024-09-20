@@ -1,12 +1,19 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/tugceyavuz/Echoes-Of-The-Future/"><img src="https://github.com/tugceyavuz/Echoes-Of-The-Future/blob/master/mainmenu.png"></a>
+  <a href="https://github.com/tugceyavuz/Echoes-Of-The-Future/"><img src="https://github.com/tugceyavuz/Echoes-Of-The-Future/blob/master/IngameImages/mainmenu.png"></a>
   <br>
   Echoes of the Future
   <br>
 </h1>
 
 <h4 align="center"> Learn more about Green Coding with Echoes of the Future.</h4>
+
+<h4 align="center"> With variety of levels </h4>
+
+<img src="https://github.com/tugceyavuz/Echoes-Of-The-Future/blob/master/IngameImages/LVL2.png">
+<img src="https://github.com/tugceyavuz/Echoes-Of-The-Future/blob/master/IngameImages/LVL3.png">
+<img src="https://github.com/tugceyavuz/Echoes-Of-The-Future/blob/master/IngameImages/LVL4.png">
+<img src="https://github.com/tugceyavuz/Echoes-Of-The-Future/blob/master/IngameImages/LVL5.png">
 
 <p align="center">
   <a href="#about">About</a> •
